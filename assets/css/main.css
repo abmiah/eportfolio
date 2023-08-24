@@ -3330,3 +3330,23 @@ input, select, textarea {
 			}
 
 		}
+/* ABM section for CSS*/
+/* Reference */
+
+	.reference p {
+		font-size: 12px;
+		line-height: 110%;
+	}
+
+	header p {
+		margin-top: -1em;
+	}
+
+	@media screen and (max-width: 736px) {
+
+		reference p {
+			font-size: 12px;
+			line-height: 110%;
+		}
+
+	}
