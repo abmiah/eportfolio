@@ -3337,7 +3337,7 @@ input, select, textarea {
 		font-size: 12pt;
 		line-height: 110%;
 	} a {
-		color:#7bd0c1;
+		color:#ae85ca;
 	}
 
 	@media screen and (max-width: 736px) {
@@ -3346,7 +3346,7 @@ input, select, textarea {
 			font-size: 12pt;
 			line-height: 110%;
 		} a {
-			color: #7bd0c1;
+			color: #ae85ca;
 		}
 
 	}
