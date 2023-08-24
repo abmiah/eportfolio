@@ -3334,8 +3334,9 @@ input, select, textarea {
 /* Reference */
 
 	.reference p {
-		font-size: 12pt;
-		line-height: 110%;
+		font-size: 14pt;
+		line-height: 120%;
+		margin-bottom: 1em;
 	} a {
 		color:#ae85ca;
 	}
@@ -3343,8 +3344,9 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 
 		reference p {
-			font-size: 12pt;
-			line-height: 110%;
+			font-size: 14pt;
+			line-height: 150%;
+			margin-bottom: 1em;
 		} a {
 			color: #ae85ca;
 		}
