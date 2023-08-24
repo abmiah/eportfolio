@@ -3334,18 +3334,14 @@ input, select, textarea {
 /* Reference */
 
 	.reference p {
-		font-size: 12px;
+		font-size: 12pt;
 		line-height: 110%;
-	}
-
-	header p {
-		margin-top: -1em;
 	}
 
 	@media screen and (max-width: 736px) {
 
 		reference p {
-			font-size: 12px;
+			font-size: 12pt;
 			line-height: 110%;
 		}
 
