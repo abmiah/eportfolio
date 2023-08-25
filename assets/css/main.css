@@ -3352,3 +3352,23 @@ input, select, textarea {
 		}
 
 	}
+
+	.postBullets {
+		list-style: none;
+	}
+
+	.post-H3 {
+		margin-bottom: 0px;
+	}
+
+	.small-BTN {
+		margin: 0, 0, 0, 0;
+	}
+	
+	p.post-date {
+		margin-bottom: 1em;
+	} 
+
+	ul.actions.postBTN {
+		margin-top: 3em;
+	}
