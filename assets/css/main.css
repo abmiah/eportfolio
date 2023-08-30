@@ -2643,6 +2643,7 @@ input, select, textarea {
 			width: 6.25em;
 		}
 
+		
 /* Footer */
 
 	#footer .icons {
@@ -2651,7 +2652,7 @@ input, select, textarea {
 
 		#footer .icons a {
 			color: rgba(255, 255, 255, 0.4);
-		}
+		} 	
 
 	#footer .copyright {
 		color: rgba(255, 255, 255, 0.4);
@@ -3259,6 +3260,17 @@ input, select, textarea {
 	.contentBody p {
 		color:red;
 	}
+	p a:hover {
+		color: DarkMagenta;
+	}
+	.contact-em {
+		color: PaleVioletRed;
+	}
+
+	/* Footer icons  */
+	#footer .icons a:hover {
+		color: #fff;
+		}
 
 	/* Accordio for References*/
 	#accordio {
