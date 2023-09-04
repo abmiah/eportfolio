@@ -3272,6 +3272,20 @@ input, select, textarea {
 		color: #fff;
 		}
 
+	/* Coding Post Section */
+	.codingPost {
+		border: dotted 1px #000;
+		padding: 1em;
+		padding-bottom: 0;
+	}
+	.codeList li {
+		font-size: 12pt;
+		line-height: 200%;
+	} .codeList p {
+		font-size: 12pt;
+		line-height: 200%;
+	}
+
 	/* Accordio for References*/
 	#accordio {
   
