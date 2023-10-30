@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Strata by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="../index.html" class="image avatar"><img src="../images/adnan-khan-VS2C5_GI_MM-unsplash_600x600.jpg" alt="" /></a>
+            <h1>Hi there, I'm <strong>Amrol B. Miah</strong> <br /> A MSc Cyber Security student<br /> based in London.</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../content.html">MSc Cybersecurity</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Get in Touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main -->
+    <div id="main">
+        <!-- Body Content -->
+        <section id="one">
+            <!-- Main Title-->
+            <header class="major">
+                <h2>End of Module Assignment</h2>
+                <!-- Sub Heading-->
+                <p class="subheading">OOP application of principles and concepts - Unit 12</p>
+                <!-- Post Date-->
+                <p><em>Monday, 30 October 2023, xx:xx pm</em></p>
+            </header>
+            <!-- Main Body Content-->
+            <article>
+                <p><strong>Overview</strong></p>
+                <p>To execute a programme base written assignment, which you can find on the following page: <a href="https://abmiah.github.io/eportfolio/posts/individual-essay-unit9.html" target="">Launching into Cyber Security August 2023 - Individual Essay (Report) - Unit 9</a> The client is based in East London and recently opened a new store a few miles away to cater to the increasing demand. They want to scale their sales using the latest technology and online shopping system (OSS). However, they are seeking clarification about the setup process and are concerned about the risk of cybercrime. A single cyberattack can severely impact the business, its reputation, and the trust of its customers.</p>
+                <p>To comply with GDPR, it is advisable to leverage an established delivery service, like Uber Eats, to avoid handling and storing customer data. Regarding the security proposal, the document emphasises two efficient threat modelling techniques: implementing a password manager and two-factor authentication (2FA). Both measures are both easy to implement and pertinent to a cost-effective solution. </p>
+                <p><strong>The program proposal</strong></p>
+                <p>The program uses Python library classes to assist users with creating and storing passwords using a password manager. The program uses the following libraries to allow better efficiency and performance</p>
+                <p>The program's overall objective is to provide users with a way to securely store their passwords while also allowing the program to generate strong passwords not based on common dictionary words. </p>
+            </article>
+            <article class="codingPost">
+                <pre><code>
+import getpass
+import random
+import string
+import hashlib as hash
+
+#Password Manager Classes section
+class PasswordManager:
+    """ Main class to declare the initialiser for the Password Manager.
+    Since it requires user input with 'self', it does not require any arguments. """
+    def __init__(self):
+        self.master_password_hash = None
+        """ An empty dictionary is created to sort the user password input. 
+        This is further developed in 'show_entries' method. """
+        self.password = {}
+
+    """ The method below sets up the 'Master Password' if the user has not already 
+    set one. The 'password' variable is stored in 'self.master_password', which is 
+    taken from the above initialiser. """
+    def set_master_password(self, master_password):
+        self.master_password_hash = hash.sha256(master_password.encode()).hexdigest()
+        print(f"\nMaster password has been set.\nMaster Password Encrypted: {self.master_password_hash}\n")
+
+    """ Method section that adds the entry to the password manager, first it checks if 
+    user has set a 'master password' before accepting any entries. The password is also
+    saved as an encryption using the 'hashlib - sha256' module to add an additional layer of 
+    security in case of a breach. """
+    def add_entry(self, website, username, password):
+        if self.master_password_hash is None:
+            print("Please enter Master Password.\n")
+            return
+
+        password_hash = hash.sha256(password.encode()).hexdigest()
+        self.password[website] = {
+            "username": username,
+            "password": password
+        }
+
+        print(f"\nEntry for has been added.")
+        print(f"Website: {website}")
+        print(f"Username: {username}")
+        print(f"Password encrypted: {password_hash}\n")
+
+    """ Method that shows the stored entries, first it checks whether the 'Master Password' has 
+    been set, and checks if there are any stored entries. Any stored entries will
+    be saved in a dictionary in the 'self.password' initialiser. """
+    def show_entries(self):
+
+        if self.master_password_hash is None:
+            print("\nEnter Master Password\n")
+            return
+
+        if not self.password:
+            print("\nNo entry was found.\n")
+            return
+
+        for website, data in self.password.items():
+            print(f"\nWebsite: {website}")
+            print(f"Username: {data['username']}")
+            print(f"Password: {data['password']}")
+            print("\n")
+
+
+#Password Generator Class
+class RandomPasswordGenerator:
+    """ This class will generate a random password that has a mixture of letters (A to Z),
+    numbers (0 - 9) and symbols obtained from the 'string' and 'random' modules. """
+    def __init__(self):
+        """ The initialiser below is obtained from 'string' module, reference taken from
+        https://docs.python.org/3/library/string.html """
+        self.letters = list(string.ascii_letters)
+        self.numbers = list(string.digits)
+        self.punctuation = list(string.punctuation) #"!@£#$%^&*()_+"
+    
+    def user_password_input(self):
+        """ This section allows users to enter the password length using a while loop.
+        The loop also checks that users entries a number with a 'try' and 'except' function. """
+        while True:
+            try:
+                user_input = int(input("\nPlease enter the length of your password: "))
+                number_of_characters = user_input
+                if number_of_characters < 8:
+                    print("Password should be at least 8 characters long")
+                else:
+                    return number_of_characters
+            except ValueError:
+                print(f"Please only use numbers.\n")
+
+    def generate_password(self):
+        characters = self.letters + self.numbers + self.punctuation
+        password = "".join(random.choice(characters)
+                                      for _ in range(self.user_password_input()))
+        return password
+
+
+#Terminal Demo
+if __name__ == "__main__":
+    password_manager = PasswordManager()
+    password_generator = RandomPasswordGenerator()
+
+    """ The while loop below is taken in the user option for the pass manager program. """
+    while True:
+        print("1. Enter Master Password")
+        print("2. Add Entry")
+        print("3. Get Account & Password Entries")
+        print("4. Generate a password")
+        print("5. Exit", end="\n")
+
+        users_choice = input("Please enter you choice: ")
+
+        if users_choice == "1":
+            if password_manager.master_password_hash is None:
+                print("\nMaster Password is not set.")
+                master_password = getpass.getpass("Please set your Master Password: ")
+                password_manager.set_master_password(master_password)
+            else:
+                print("Master password is already set.")
+                password_manager.show_entries()
+
+        elif users_choice == "2":
+            while True:
+                if password_manager.master_password_hash is None:
+                    print("\nPlease set Master Password\n")
+                    master_password = getpass.getpass("Password: ")
+                    password_manager.set_master_password(master_password)
+
+                else:
+                    website = input("\nEnter website name: ")
+                    username = input("Enter username: ")
+                    password = password_generator.generate_password()
+                    password_manager.add_entry(website, username, password)
+                    break
+
+        elif users_choice == "3":
+            password_manager.show_entries()
+
+        elif users_choice == "4":
+            password = password_generator.generate_password()
+            print(f"\nGenerated Password: {password}\n")
+
+
+        elif users_choice == "5":
+            print("\nThank you for using Password Manager")
+            break
+
+        else:
+            print("\nPlease try again, that is an invalid choice")
+                </code></pre>
+                <!-- Readme Doc-->
+                <div class="codeList">
+                    <h2>Read me documentation</h2>
+                    <h3>Unit 12 – End of Module Assignment: EMA: OOP application of principles and concepts</h3>
+                    <p> The program proposal The program uses Python libraries to create and store passwords for the password manager program. For more details, refer to the documentation on this site <a href="https://docs.python.org/" target="_blank">https://docs.python.org/</a> and the code section below. </p>
+                    <p>The goal is to store and generate strong passwords securely.</p>
+                    <p><strong>Code Explanation</strong></p>
+                    <ol>
+                        <li>The code starts with implementing four Python modules:</li>
+                    </ol>
+                    <p><code>getpass</code> allows users to input a password without it being displayed.</p>
+                    <p><code>random</code> selects elements from a <code>list</code> using the <code>choice()</code> method.</p>
+                    <p>The <code>string</code> module is used alongside the <code>random.choice()</code> method as the library has pre-defined <code>strings</code>, <code>integers</code> and symbols.</p>
+                    <p>The <code>hashlib</code> module uses the <code>sha256()</code> method to produce a hexadecimal <code>string</code> resulting in the encryption of any random password created from the <code>string</code> module.</p>
+                    <ol>
+                        <li>
+                            <p>The <code>PasswordManager</code> class has two initialisers allowing users to store and generate passwords. <code>self.master_password_hash</code> is set to <code>None</code> allowing users to encrypt their master password using <code>hash.sha256()</code>. <code>self.password = {}</code> is an empty dictionary that allows users to input a website name, username, and password.</p>
+                        </li>
+                        <li>
+                            <p>A setter method <code>set_master_password()</code> is created to store the encrypted master password in <code>self.master_password_hash</code>. It uses <code>hash.sha256(master_password.encode()).hexdigest()</code> to convert the password string to hexadecimal.</p>
+                        </li>
+                        <li>
+                            <p>The <code>add_entry()</code> method in the <code>PasswordManager</code> class checks for a master password before storing the website, username and password in an empty dictionary <code>self.password</code>. The password is hashed using <code>sha256()</code> and saved in the <code>password_hash</code> variable. `</p>
+                        </li>
+                        <li>
+                            <p>The method <code>def show_entries(self)</code>, stored within the <code>PasswordManager</code> class, gets the stored entries from the <code>def add_entry</code> method, checking first for a master password in an <code>if</code> statement, once the master password has been established a <code>for loop</code> will loop through the <code>self.password</code> dictionary and output the stored data.</p>
+                        </li>
+                        <li>
+                            <p>A new <code>class RandomPasswordGenerator</code> is created to produce a random password using a mixture of <code>string</code> (uppercase and lowercase) <code>integers</code> and symbols obtained from the <code>string</code> module. The class initialisers are assigned to a <code>list</code>.</p>
+                        </li>
+                        <li>
+                            <p>A method of <code>def user_password_input(self)</code> uses a combination of <code>while loop</code> to get the user input of the length of the password and <code>try</code> and <code>except</code> block, which handles any error that the user may cause for example entering a password length that less than eight characters long or entering a non <code>integer</code> input.</p>
+                        </li>
+                        <li>
+                            <p>The final method within the class <code>def generate_password(self)</code> obtains the data from the <code>list</code> variables saved in the main initialisers to <code>characters</code> and then the variable <code>password</code> using the <code>.join()</code> function that converts <code>list</code> items into a single string with <code>random.choice(characters)</code>. This is then looped using the input from <code>user_password_input</code> to return the final password.</p>
+                        </li>
+                        <li>
+                            <p>The final test phase first initialises <code>if __name__ == “__main__”:</code> so the file will run as a script. The two classes are saved as two objects, <code>password_manager = PasswordManager()</code> and <code>password_generator = RandomPasswordGenerator()</code> a <code>while loop</code>, with <code>if</code>, <code>elif</code> and <code>else</code> statements asking the user to select from five options.</p>
+                        </li>
+                    </ol>
+                    <ul>
+                        <li>
+                            <p>Option 1 sets the master password obtained from the object <code>password_manager = PasswordManager()</code> with an <code>if</code> and <code>else</code> statement checking the master password and entries.</p>
+                        </li>
+                        <li>
+                            <p>Option 2 adds an entry; it runs a <code>while loop</code> checking for the master password within an <code>if</code> and <code>else</code> statement. The password is generated from the <code>password_generator</code> object.</p>
+                        </li>
+                        <li>
+                            <p>Option 3 shows the user entries from the <code>show_entries()</code> method.</p>
+                        </li>
+                        <li>
+                            <p>Option 4 generates a random password from the <code>password_generator = RandomPasswordGenerator()</code> object.</p>
+                        </li>
+                        <li>
+                            <p>Option 5 exits the programme with a <code>break</code> function to stop the <code>while loop</code>.</p>
+                        </li>
+                        <li>
+                            <p>A final <code>else</code> statement checks if a user enters a wrong input.</p>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                </br>
+                <!-- Video embed-->
+                <h2>Video demonstration</h2>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/f9zPZ6DORxQ?si=olWdIQN9G4tPElMm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+                </br>
+                <p>Head over to my GitHub page to view the repositories <a href="https://github.com/abmiah/unit-12" target="_blank">https://github.com/abmiah/unit-12</a></p>
+            </article>
+            <!--References Accordio -->
+            <div>
+                </br>
+            </div>
+            <!-- Button to nagigate to the the next page -->
+            <ul class="actions">
+                <li><a href="../content.html" class="button">Back</a></li>
+                <li><a href="individual-essay-unit9.html" class="button">Read the full post</a></li>
+            </ul>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://uk.linkedin.com/in/amrol-b-miah-390b3b35?trk=org-employees" target="_blank" class="icon brands fa-brands fa-linkedin-in"><span class="label">linkedin</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="https://www.instagram.com/amrolbm/?hl=en" target="_blank" class="icon brands fa-brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon solid fa-solid fa-user-secret"><span class="label">Securit Agent</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Amrol B. Miah 2023</li>
+                <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
