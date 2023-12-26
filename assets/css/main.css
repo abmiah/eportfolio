@@ -3232,6 +3232,10 @@ input, select, textarea {
 		margin-right: 20px;
 	}
 
+	.slideBoarder {
+		border: #333 solid 1px;
+	}
+
 	/* Navbar with links */
 	nav {
 		margin-top: 10%;
