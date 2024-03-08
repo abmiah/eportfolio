@@ -1,0 +1,80 @@
+<p>The STRIDE method is a threat modeling framework commonly used in cybersecurity to identify and classify potential threats in a systematic manner. Developed by Praerit Garg and Loren Kohnfelder at Microsoft, the STRIDE acronym stands for Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege. By utilising this framework, organisations can effectively assess and mitigate risks associated with software and system vulnerabilities (Shostack, 2014). </p>
+<p>To fully grasp the intricate workings of a nuclear power station, it is imperative to deconstruct it into its components. This may entail analysing its reactors, cooling systems, control mechanisms, and physical security measures. For this exercise, we will focus on gaining entry to its control system. </p>
+<p>It is important to note that nuclear plants are characterised by intricate structures that employ the most advanced and rigorous security measures. The preceding discussion is merely an illustrative example of analyses conducted on a threat model.</p>
+<!-- Image left and conttent place on the right -->
+<p><span class="image left"><img src="../../images/articles_imgs/seminar/threat-modlelling/01_nuclear_flowchart.jpg" alt="" /></span> Nuclear power plants employ a defence-in-depth strategy to ensure protection against cyber attacks. This strategy involves using a hardware device that permits data to move solely from high-security to low-security zones (Cisa.gov, 2024). </p>
+<p><span class="image left"><img src="../../images/articles_imgs/seminar/threat-modlelling/02_nuclear_flowchart.jpg" alt="" /></span> High-security nuclear industrial control systems are paramount to the safety and security of nuclear power plants. These systems are a critical layer of protection against various potential hazards, including equipment malfunctions, cyber attacks, and radiation leaks. Given the potentially catastrophic consequences of such hazards, these systems' development, maintenance, and improvement must be prioritised and given due attention. Only through sustained investment in these essential systems can we ensure the long-term safety and security of our nuclear power plants and the communities that rely on them (Cisa.gov, 2024; Nti.org, 2024). </p>
+<p><span class="image left"><img src="../../images/articles_imgs/seminar/threat-modlelling/03_nuclear_flowchart.jpg" alt="" /></span> The data diode is a specialised hardware tool allowing data to flow in only one direction, thereby enhancing security against unauthorised access and malicious attacks. Its effectiveness has made it a highly sought-after solution in various industries, including finance, military, and government. With its unidirectional data transmission capabilities, the data diode has proven to be a reliable and robust safeguard against the risks associated with bidirectional data flow (Cisa.gov, 2024; Nti.org, 2024). </p>
+<p><span class="image left"><img src="../../images/articles_imgs/seminar/threat-modlelling/04_nuclear_flowchart.jpg" alt="" /></span> Low-security resources can provide decision-makers with valuable operational data, centralising it in one location. This consolidation of information can empower individuals to make informed decisions, giving them a competitive edge in their respective fields (Cisa.gov, 2024; Nti.org, 2024). </p>
+<!-- Attack tree -->
+<p><b>Attack Tree</b></p>
+<p>Provide some content to discribe the attach tree with reference</p>
+<img src="../../images/articles_imgs/seminar/threat-modlelling/threat-modelling-attack-tree.jpg" alt="">
+
+
+<!-- Table -->
+<div class="table-wrapper">
+    <table class="alt">
+        <thead>
+            <tr>
+                <th> STRIDE </th>
+                <th> Description</th>
+                <th> Nuclear power station - control system </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Spoofing </td>
+                <td> This particular security breach involves the surreptitious attempt by unauthorised entities to impersonate another user or machine to gain access to a system. One of the most prevalent instances of this phenomenon is phishing emails, which appear to emanate from a reliable source to dupe users into divulging confidential information (Hewko, 2023; Shostack, 2014).</td>
+                <td>Phishing emails may request user compliance with a performance-related update by filling out a form, and these emails can appear to come from a trustworthy source such as an agent, supplier, or government body.</td>
+            </tr>
+            <tr>
+                <td> Tampering</td>
+                <td>Unauthorised modifications to code or data refer to the changes made without proper authorisation or permission. This is a severe issue in computer security and can lead to various security breaches and attacks. For example, a hacker may attempt to alter a user's account balance in an online banking system, a type of unauthorised modification. To prevent such incidents, it is crucial to have strong security measures in place, such as firewalls, intrusion detection systems, and access controls. Regular security audits and testing can also help identify vulnerabilities and potential attacks (Hewko, 2023; Shostack, 2014).</td>
+                <td>Due to a lack of proper cyber security training, a user from the plant inadvertently opened an email along with its attachment, which injected the system with sophisticated malware that went undetected by their antivirus and EPD.</td>
+            </tr>
+            <tr>
+                <td> Repudiation</td>
+                <td>In situations where there is a dearth of evidence, it is not uncommon for users to repudiate their actions. For instance, a user may dispute having placed an online order when there is inadequate logging to support the claim (Hewko, 2023; Shostack, 2014).</td>
+                <td>The plant user believed it was a legitimate email, given that they were in an internal compliance process. No one would have known unless an employee of the plant.</td>
+            </tr>
+            <tr>
+                <td> Information Disclosure</td>
+                <td>The term refers to the act of exposing information to individuals who are not authorised to access it. This unauthorised exposure of information may occur due to various reasons, such as a coding error, which inadvertently reveals user passwords to hackers (Hewko, 2023; Shostack, 2014).</td>
+                <td>Malware has accessed the data server containing nuclear information and personal data of stakeholders, employees, and government contractors. It has also locked out employees from accessing the server.</td>
+            </tr>
+            <tr>
+                <td>Denial of Service (DoS)</td>
+                <td>A denial-of-service (DoS) attack is a type of cyber-attack that aims to render a service unavailable by flooding it with a high volume of illegitimate requests. When the attack is distributed, it is called a Distributed Denial-of-Service (DDoS) attack. The primary goal of a DDoS attack is to disrupt the normal functioning of a targeted system, such as a website, by overwhelming it with traffic from multiple sources. This results in the system being unable to respond to legitimate requests, effectively bringing it down. DDoS attacks are a significant threat to online services and can cause considerable financial and reputational damage (Hewko, 2023; Shostack, 2014).</td>
+                <td>This attack was not intended to cause a nuclear meltdown but rather to obtain information. In doing so, requests flooded their systems, rendering them unusable.</td>
+            </tr>
+            <tr>
+                <td>Elevation of Privilege</td>
+                <td>The phenomenon in which individuals without proper authorisation attain elevated permissions, enabling them to perform unsanctioned activities, is a recurrent concern. A common example involves exploiting software vulnerabilities to obtain administrative privileges within a given system (Hewko, 2023; Shostack, 2014).</td>
+                <td>Third-party software may have a zero-day vulnerability that provides access to a system, giving threat actors oversight when they are conducting internal compliance audits.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Reference: -->
+
+<cite>Cisa.gov (2024). <em>NUCLEAR SECTOR.</em> [online] <em>Cybersecurity in the Nuclear Sector.</em> Available at: <a href="https://www.cisa.gov/sites/default/files/publications/Nuclear%20Sector%20Cybersecurity%20Infographic%204.13.21_508c.pdf" target="_blank">https://www.cisa.gov/sites/default/files/publications/Nuclear%20Sector%20Cybersecurity%20Infographic%204.13.21_508c.pdf</a>  [Accessed 5 Mar. 2024].
+</cite>
+</br></br>
+<cite>Hewko, A. (2023). <em> Threat Modeling: What You Need to Know.</em> [online] www.softwaresecured.com. Available at: <a href="https://www.softwaresecured.com/post/stride-threat-modeling" target="_blank">https://www.softwaresecured.com/post/stride-threat-modeling</a>  [Accessed 5 Mar. 2024].
+</cite>
+</br></br>
+<cite>Ncsc.gov.uk (2023). <em>attack trees to understand cyber security risk.</em> [online] www.ncsc.gov.uk. Available at: <a href="https://www.ncsc.gov.uk/collection/risk-management/using-attack-trees-to-understand-cyber-security-risk" target="_blank">https://www.ncsc.gov.uk/collection/risk-management/using-attack-trees-to-understand-cyber-security-risk</a>  [Accessed 5 Mar. 2024].
+</cite>
+</br></br>
+<cite>Nti.org (2024). <em>Addressing Cyber-Nuclear Security Threats.</em> [online] The Nuclear Threat Initiative. Available at:<a href="https://www.nti.org/about/programs-projects/project/addressing-cyber-nuclear-security-threats/" target="_blank">https://www.nti.org/about/programs-projects/project/addressing-cyber-nuclear-security-threats/</a>  [Accessed 5 Mar. 2024].
+</cite>
+</br></br>
+<cite>Shostack, A. (2014). <em>Threat Modeling: Designing for Security.</em> [online] idp1.essex.ac.uk. Available at:<a href="http://ebookcentral.proquest.com/lib/universityofessex-ebooks/detail.action?docID=1629177" target="_blank">http://ebookcentral.proquest.com/lib/universityofessex-ebooks/detail.action?docID=1629177</a> [Accessed 5 Mar. 2024].</cite>
+</br></br>
+
+
+
+
