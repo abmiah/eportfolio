@@ -3226,6 +3226,15 @@ input, select, textarea {
 
 	/* ABM CSS Section*/
 	/* Element Section*/
+	.list-links {
+		color: #49bf9d;
+		font-size: 16px;
+	} .list-links:hover {
+		color: darkmagenta;
+	}
+
+
+
 	#four {
 		display: block;
 		margin-left: 20px;
