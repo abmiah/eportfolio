@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!-- initial-post1-summary-module2.html -->
+<html>
+
+<head>
+    <title>Strata by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="../../index.html" class="image avatar"><img src="../../images/adnan-khan-VS2C5_GI_MM-unsplash_600x600.jpg" alt="" /></a>
+            <h1>Hi there, I'm <strong>Amrol B. Miah</strong> <br /> A MSc Cyber Security student<br /> based in London.</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../content.html">MSc Cybersecurity</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Get in Touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main -->
+    <div id="main">
+        <!-- Body Content -->
+        <section id="one">
+            <!-- Main Title-->
+            <header class="major">
+                <h2>Development Team Project: Design Document </h2>
+                <!-- Sub Heading-->
+                <p class="subheading">Copyright infringement in the music industry report</p>
+                <!-- Post Date-->
+                <p><em>Saturday, 18 May 2024, 4:07 PM</em></p>
+            </header>
+            <!-- Main Body Content-->
+            <article>
+
+                <p><b>1.	Introduction </b></p>
+                <p>This report aims to introduce an application specially crafted to provide a secure storage solution for musical recordings and lyrics. The application features a database designed to store all artefacts securely. The application will incorporate a unique feature that enables the creation of checksums and encryption of artefacts during storage, offering a mechanism for creating and storing timestamps, which can be utilized to document the artefacts' creation and modification dates and times.</p>
+                <p>In the context of digital music piracy, copyright infringement can manifest in numerous ways, including but not limited to copying music files onto CDs, establishing websites that provide unauthorized downloads of copyrighted material, and distributing music without compensating its rightful owners for licensing fees (Gateway, 2019).</p>
+                <p><b>2.	UML Design Application</b></p>
+                <p><b>2.1.	System Flowchart.</b></p>
+                <p>The flowchart provides valuable insight into explicating stakeholder requirements while simultaneously demonstrating the user-friendly integration of application elements.</p>
+
+                <img src="../../images/articles_imgs/development-team-project_copyright-infringment/UML-Flowchart2.jpg" width="100%" height="auto" alt="Figure 1 is a system flowchart providing a general application overview (Miro, 2019).">
+
+                <p><b>Figure 1</b> is a system flowchart providing a general application overview (Miro, 2019).</p>
+                <p>The database must support digital music records, lyrics, and music scores and enforce role-based access control. To enhance security, an additional layer of encryption has been added.</p>
+                <p><b>2.2.	UML Use Case Diagram</b></p>
+
+                <img src="../../images/articles_imgs/development-team-project_copyright-infringment/uml-use-case-diagram.png" width="100%" height="auto" alt
+="Figure 2 is a Use Case Diagram that effectively describes a system’s external behaviours in user terms (Visual Paradigm, 2019c).">
+
+
+                <p><b>Figure 2</b> is a Use Case Diagram that effectively describes a system’s external behaviours in user terms (Visual Paradigm, 2019c).</p>
+                <p>Use case diagrams offer an overview of the application's actors and their interactions. The diagram visually represents the different actions or use cases that users can carry out within the system. Actors, as external entities, engage with the system. In this scenario, the two main actors are administrators and users/customers (Nishadha 2022).</p>
+                <p><b>2.3.	UML Class Diagram</b></p>
+
+                <img src="../../images/articles_imgs/development-team-project_copyright-infringment/uml-class-diagram.png" width="100%" height="auto" alt
+="Figure 3 is a UML Class Diagram that aids developers in structuring the application based on class relationships (Visual Paradigm, 2019a).">
+
+                <p><b>Figure 3</b> is a UML Class Diagram that aids developers in structuring the application based on class relationships (Visual Paradigm, 2019a).</p>
+                <p>Class diagrams represent an application's static view. Because they are the only diagrams that can be directly mapped to object-oriented languages, class diagrams are frequently utilized during the construction process.</p>
+
+                <img src="../../images/articles_imgs/development-team-project_copyright-infringment/uml-class-diagram_database.png" width="50%" height="auto" alt
+="Figure 4: Based on the domain class diagram in Figure 3, a normalized database design is proposed.">
+
+
+                <p><b>Figure 4:</b> Based on the domain class diagram in <b>Figure 3</b>, a normalized database design is proposed.</p>
+                <p><b>2.4.	UML Sequence Diagram</b></p>
+
+                <img src="../../images/articles_imgs/development-team-project_copyright-infringment/uml-sequence-diagram.png" width="100%" height="auto" alt
+="Figure 5. is a Sequence Diagram illustrating object’s interaction during system operation (Visual Paradigm, 2019b).">
+
+
+                <p><b>Figure 5.</b> is a Sequence Diagram illustrating object’s interaction during system operation (Visual Paradigm, 2019b).</p>
+                <p><b>3.	Conclusion</b></p>
+                <p>According to Ren (2009), a sequence diagram is a tool that aids in prioritizing the timing of information exchange among objects or classes whilst also displaying the interaction of lifecycle among classes when an activity is implemented. The diagrams illustrate the scenario of adding an artefact and the sequence of messages exchanged between objects to achieve the desired outcome. The user’s authentication triggers the Music App to generate the Artefact ID, timestamps, and checksum for the new artefact. Subsequently, the artefact undergoes encryption before being stored in the database. Finally, the Music App sends a confirmation message to the user indicating the successful addition of the artefact. Specific security features, namely encryption and checksum generation, have significantly improved the security of many applications. These measures safeguard sensitive musical content from unauthorized access and tampering.</p>
+                <p>These diagrams present a comprehensive visualization of the application’s design, adhering to the UML standards and conventions whilst highlighting practical object-oriented design principles. However, a meticulous analysis must account for the trade-offs involved in design decisions. For instance, whilst security is paramount, it must be weighed against usability and performance considerations. Whilst the outlined design incorporates several advantageous features for securing and managing musical content, a critical analysis should also highlight potential drawbacks and areas for improvement, evincing a nuanced understanding of the design space and the underlying trade-offs.</p>
+
+                <p>UML diagrams adhere to standardized conventions, yet trade-offs such as security, usability and performance must be considered. Whilst the design may include advantageous features, critically appraising potential limitations and areas requiring improvement is essential.</p>
+
+                <p><b>Authors:</b></p>
+                 <ul>
+                    <li>Anja Kosar:&nbsp;&nbsp;<a class="list-links" href="https://anja-kosar.github.io" target="_blank">anja-kosar.github.io</a></li>
+                    <li>Amrol Miah</li>
+                    <li>Mohammed Younes:&nbsp;&nbsp;<a class="list-links" href="https://my23007.github.io" target="_blank">my23007.github.io</a></li>
+                    <li>Wiley Finch:&nbsp;&nbsp;<a class="list-links" href="https://wileyeducational.github.io/eportfolio" target="_blank">wileyeducational.github.io/eportfolio</a></li>
+                </ul>
+            </article>
+            <!--References Accordio -->
+            <div id="accordio">
+                <ul>
+                    <li>
+                        <input type="checkbox" checked>
+                        <i></i>
+                        <h2>References:</h2>
+                        <!-- Reference content -->
+                        <p>
+                            <br><br>
+                            <cite>Gateway, M. (2019). <em>What Is Copyright Infringement In Music?</em> [online] Music Gateway. Available at: <a href="https://www.musicgateway.com/blog/music-industry/copyright-in-music" target="_blank">https://www.musicgateway.com/blog/music-industry/copyright-in-music</a> [Accessed 11 May 2024].</cite>
+                            <br><br>
+
+                            <cite>Miro (2019). <em>Team collaboration software & online whiteboard for teams | Miro. </em>[online] <a href="https://miro.com/. Available from: https://miro.com/" target="_blank">https://miro.com/. Available from: https://miro.com/</a> [Accessed 8 May 2024].</cite>
+                            <br><br>
+
+                            <cite>Pastukhov, D. (2020). <em>Soundcharts | Market Intelligence for the Music Industry. </em>[online] soundcharts.com. Available from: <a href="https://soundcharts.com/blog/music-copyrights" target="_blank">https://soundcharts.com/blog/music-copyrights</a>  [Accessed 11 May 2024].</cite>
+                            <br><br>
+
+                            <cite>Ren, C. (2009). Research and Design of Online Auction System Based on the Campus Network Using UML. <em>IEEE Xplore,</em> [online] pp.129–133. doi:<a href="https://doi.org/10.1109/WMWA.2009.17" target="_blank">https://doi.org/10.1109/WMWA.2009.17</a> [Accessed 1 May. 2024].</cite>
+                            <br><br>
+
+                            <cite>Visual Paradigm (2019a). <em>What is Class Diagram?</em> [online] Visual-paradigm.com. Available from: <a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/" target="_blank">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/</a> [Accessed 10 May 2024].</cite>
+                            <br><br>
+
+                            <cite>Visual Paradigm (2019b). <em>What is Sequence Diagram?</em> [online] Visual-paradigm.com. Available from: <a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-sequence-diagram/" target="_blank">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-sequence-diagram/</a> [Accessed 11 May 2024].</cite>
+                            <br><br>
+
+                            <cite>Visual Paradigm (2019c). <em>What is Use Case Diagram?</em> [online] Visual-paradigm.com. Available from: <a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/" target="_blank">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/</a> [Accessed 10 May 2024].</cite>
+                            <br><br>
+
+                            <cite>Nishadha (2022). <em>Use case diagram tutorial (guide with examples) | creately.</em> [online] creately.com. Available from: <a href="https://creately.com/guides/use-case-diagram-tutorial/" target="_blank">https://creately.com/guides/use-case-diagram-tutorial/</a>. [Accessed 14 May 2024].</cite>
+                            <br><br>
+
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Button to nagigate to the the next page -->
+            <ul class="actions">
+                <li><a href="../../posts/04-secure-software-development/secure-software-development.html" class="button">Back</a></li>
+                 <li><a href="../../posts/04-secure-software-development/development-individual-project_coding-output.html" class="button">Read the coding output</a></li>
+            </ul>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://uk.linkedin.com/in/amrol-b-miah-390b3b35?trk=org-employees" target="_blank" class="icon brands fa-brands fa-linkedin-in"><span class="label">linkedin</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="https://www.instagram.com/amrolbm/?hl=en" target="_blank" class="icon brands fa-brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon solid fa-solid fa-user-secret"><span class="label">Securit Agent</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Amrol B. Miah 2023</li>
+                <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

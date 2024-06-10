@@ -1,0 +1,647 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!-- initial-post1-summary-module2.html -->
+<html>
+
+<head>
+    <title>Strata by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="../../index.html" class="image avatar"><img src="../../images/adnan-khan-VS2C5_GI_MM-unsplash_600x600.jpg" alt="" /></a>
+            <h1>Hi there, I'm <strong>Amrol B. Miah</strong> <br /> A MSc Cyber Security student<br /> based in London.</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../content.html">MSc Cybersecurity</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Get in Touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main -->
+    <div id="main">
+        <!-- Body Content -->
+        <section id="one">
+            <!-- Main Title-->
+            <header class="major">
+                <h2>Development Individual Project: Coding Output </h2>
+                <!-- Sub Heading-->
+                <p class="subheading">Secure Software Development – Unit 6</p>
+                <!-- Post Date-->
+                <p><em>Saturday, 18 May 2024, 4:07 PM</em></p>
+            </header>
+            <!-- Main Body Content-->
+            <!--Introduction of the project-->
+
+            <article>
+                <!--Readme Documentation section-->
+                <h3>README Documentation</h3>
+                <p><b>1. Summary</b></p>
+                <p>The application represents a database management system designed to oversee music copyrights. It facilitates user interactions with a music artefact database, offering comprehensive functionality in line with the CRUD (Create, Read, Update, Delete) methodology (Sumologic, n.d.). The program is developed using Python and employs SQLite3 for database management.</p>
+                <p>The software has been crafted to prioritise security and data integrity. For instance, it leverages password hashing to store and compare user passwords securely and employs transactions to guarantee atomic and consistent database operations. Additionally, it incorporates some error-handling mechanisms to capture and report exceptions that may arise during database operations.</p>
+                <p>The README file contains a report that presents examples of security testing. This demonstration showcases <code>Bandit</code>, <code>Flake8</code> , and <code>Safety CLI</code> tools.</p>
+                <p>To develop this program, extensive and thorough research was conducted to explore database creation methods. This involved utilising a variety of YouTube tutorials and consulting numerous Python documentation sources, including the IDE documentation; sources can be found in the references section.</p>
+                <p><b>GitHub repository:</b> <a href="https://github.com/abmiah/pythonProject_SecureSoftwareDevelopment_Unit6_CodingProject" target="_blank">https://github.com/abmiah/pythonProject_SecureSoftwareDevelopment_Unit6_CodingProject</a></p>
+                <p><b>Video sample:</b> <a href="https://www.youtube.com/watch?v=oRM02-aKKZM" target="_blank">https://www.youtube.com/watch?v=oRM02-aKKZM</a></p>
+                <p><b>2. Coding Evaluation</b></p>
+                <p>The program uses the <code>SQLite3</code> module to generate supplementary files within the operational environment. Specifically, these files are denominated as <code>account.db</code>, housing pertinent information about system users, and <code>music_artefact.db</code>, encompassing comprehensive data records concerning the musical artefact; other files include musical lyrics and scores, all encapsulated within a <b>.txt</b> file.</p>
+                <p>To execute the program, it is imperative to ensure that all files from the project folder titled <b>pythonProject</b> have been successfully opened within the IDE. The <b>.venv</b> folder in the example should be disregarded, as it simply serves as an environment folder utilised in the IDE. <b>Figure 2.1.1</b> illustrates all the files in the <b>pythonProject</b> root folder. Subsequently, once all the files are accessible in the chosen IDE, the <code>script.py</code> should be executed within the IDE terminal to engage with the program. Upon execution, users are required to input the following credentials. It is important to note that these credentials are solely for testing purposes, and users are strongly advised to employ a secure password.</p>
+
+                    <ul>
+                        <li><b>username:</b> admin</li>
+                         <li><b>password:</b> admin</li>
+                    </ul>
+
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/projectfiles.jpg" width="50%"  alt="Figure 2.1.1: All the files within the root folder of pythonProject.">
+                <p><b>Figure 2.1.1:</b> All the files within the root folder of pythonProject.</p>
+                <p><b>2.2. account.py</b></p>
+                <p>This file plays an essential role in managing user accounts within the system. It encompasses a class called <code>AccountDB</code>, which interfaces with an <b>SQLite3</b> database to execute myriad operations associated with user accounts.</p>
+                <p>Except for <b>SQLite3</b>, the file uses two other modules: datetime to gather the user's date of birth information and the <code>hashlib</code> <code>SHA256</code> algorithm to encrypt the user’s passwords.</p>
+                <p><b>2.3. login.py</b></p>
+                <p>This meticulously designed document houses the <code>Login</code> class, which plays a pivotal role in user authentication. It is crafted to validate user credentials and manage user information, including first and last names and admin status, ensuring robust security measures.</p>
+                <p>The <b>login.py</b> interacts with the <code>AccountDB</code> class, created in the account.py file, to perform various operations related to user login; the file also uses hashlib to ensure the password is encrypted when the program prints it back to the user for verification.</p>
+                <p><b>2.4. music_db.py</b></p>
+                <p>This file is the heart of the music artefact database management. It encompasses the <code>MusicArtefactDB</code> class, which manages interactions with the music artefact database. It comprises methods for inserting and fetching data and updating and deleting existing records. Additionally, it incorporates methods for handling specific tasks such as reading a text file (for importing music artefacts), generating a hash for a record (for secure data storage), and formatting data using <b>Pandas DataFrame</b> for convenient visualisation.</p>
+                <p>The file uses several modules, including <b>SQLite3</b>, to create the <code>music_artefact.db</code> database, the datetime for recording when artefacts have been uploaded onto the system and when they have been modified. Each new modification creates a new timestamp. The hashlib is used to encrypt the music record file. A minimal Panda is used solely to format the table within the terminal. The time module allows the program to execute its command slowly while the users interact with the system, providing a better user experience. Finally, the Login class is imported from the login.py files to ensure the correct user interacts with the system.</p>
+                <p><b>2.5. script.py</b></p>
+                <p>This script is the program’s central orchestrator. It serves as the primary component for executing the program. It incorporates the <code>Login</code> and <code>MusicArtefactDB</code> classes to facilitate interaction with the user and the database. The script initiates a login prompt for the user, followed by a menu presentation displaying various options. Based on the user's selection, it invokes pertinent methods from the MusicArtefactDB class to facilitate viewing, adding, modifying, or removing music artefacts in the CRUD methodology. This script allows the user to interact with the software and perform various operations.</p>
+                <p>The file uses the <code>getpass</code> module to prevent the password from echoing when the user enters the terminal. It also uses the time module to slow down the program commands for a better user experience.</p>
+                <p><b>3. Security Testing</b></p>
+                <p><b></b></p>
+                <p><b>3.1. Bandit Scanning</b></p>
+                <p>The initial security tool examined during the program's development was Bandit. This tool is expressly tailored to identify known security vulnerabilities within the codebase. It can be effortlessly installed using the IDE terminal through the command <code>pip install bandit</code>. Upon completion of the Bandit scan, a comprehensive report delineating any security issues and specifying the line of code containing the identified flaw is generated.(Bandit, n.d.; PyCQA, 2024).</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/Bandit-account.jpg" width="100%"  alt="Figure 3.1.1: Report scan on account.py identifies no vulnerabilities.">
+                <p><b>Figure 3.1.1:</b> Report scan on account.py identifies no vulnerabilities.</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/Bandit-login.jpg" width="100%"  alt="Figure 3.1.2: Report scan on login.py identifies no vulnerabilities.">
+                <p><b>Figure 3.1.2:</b> Report scan on login.py identifies no vulnerabilities.</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/Bandit-music.jpg" width="100%"  alt="Figure 3.1.3: The scan of music_db.py has uncovered a security vulnerability with a medium severity rating of 1. ">
+                <p><b>Figure 3.1.3:</b> The scan of <b>music_db.py</b> has uncovered a security vulnerability with a medium severity rating of 1. This flaw presents a potential avenue for threat actors to exploit SQL injection. This attack vector may manifest when users update the database and are exclusively executable by administrators. The report includes a reference to an article on Mitre’s website, which provides a comprehensive explanation of SQL injection documentation, elucidating the diverse tactics employed by threat actors to manipulate queries and gain unauthorised access to the database (Mitre, 2013).</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/Bandit-script.jpg" width="100%"  alt="Figure 3.1.4: Report scan on script.py identifies no vulnerabilities.">
+                <p><b>Figure 3.1.4:</b> Report scan on script.py identifies no vulnerabilities.</p>
+                <p><b>3.2. Flake8 Scanning</b></p>
+                <p>The second implemented security tool is <code>flake8</code>. Analogous to <code>Bandit</code>, this tool scrutinises the code for potential errors and assesses its styling and complexities within the codebase. The tool was installed through the IDE terminal command using the <code>pip install flake8</code> (Cordasco, 2016b; Packetcoders, 2022).</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/flake8-account.jpg" width="100%"  alt="Figure 3.2.1: The scan of account.py indicates the presence of E501.">
+                <p><b>Figure 3.2.1:</b> The scan of <b>account.py</b> indicates the presence of E501. According to Flake8rules (n.d.), it is recommended that line characters do not exceed 79 characters, consistent with the line limits specified in the PEP8 documentation (van Rossum et al., 2001). The occurrence of E501 is attributed to either the class commenting or the diverse data points within the SQL data.</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/flake8-login.jpg" width="100%"  alt="Figure 3.2.2: The scan of the login.py file reveals the presence of characters that exceed the 79-character limit.">
+                <p><b>Figure 3.2.2:</b> The scan of the <b>login.py</b> file reveals the presence of characters that exceed the 79-character limit. Additionally, the analysis indicates that F541, <code>f-strings</code>, has no code within the placeholders (Cordasco, 2016a).</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/flake8-music_all.jpg" width="100%"  alt="Figure 3.2.3: Analysing music_db.py file, it was observed that numerous lines exceeded the 79-character limit E501.">
+                <p><b>Figure 3.2.3:</b> Analysing <b>music_db.py</b> file, it was observed that numerous lines exceeded the 79-character limit E501. Additionally, trailing whitespaces were identified in W291 (Flake8rules, n.d.).</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/flake8-script.jpg" width="100%"  alt="Figure 3.2.4: The analysis of the script.py file also revealed a consistent styling issue, characterised by lines that exceed the specified character limit and contain trailing whitespaces">
+                <p><b>Figure 3.2.4:</b> The analysis of the <b>script.py</b> file also revealed a consistent styling issue, characterised by lines that exceed the specified character limit and contain trailing whitespaces</p>
+                <p><b>3.3. Safety CLI Scanning</b></p>
+                <p>The final scanning tool employed is <b>Safety CLI</b>, predominantly utilised on developer computers to meticulously scan each file within the project, aiming to reveal any potential code discrepancies that could lead to vulnerabilities (Pyup.io, 2024; Safetycli, 2024).</p>
+                <img src="../../images/articles_imgs/development-Ind-project-coding-output/SafetySacn.jpg" width="100%"  alt="Figure 3.3.1: The analysis indicates that it is free of significant vulnerabilities. Two vulnerabilities have been identified, but the project's policy has disregarded them.">
+                <p><b>Figure 3.3.1:</b> The analysis indicates that it is free of significant vulnerabilities. Two vulnerabilities have been identified, but the project's policy has disregarded them.</p>
+            </article>
+            <article>
+                <!-- Video embed-->
+                <h2>Video demonstration</h2>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/oRM02-aKKZM" title="Unit6 Coding Project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <br>
+                <p>Head over to my GitHub page to view the repositories <a href="https://github.com/abmiah/pythonProject_SecureSoftwareDevelopment_Unit6_CodingProject" target="_blank">https://github.com/abmiah/pythonProject_SecureSoftwareDevelopment_Unit6_CodingProject</a></p>
+            </article>
+
+            <article class="codingPost">
+                <!--Code section-->
+                <h3>account.py</h3>
+
+                <pre>
+                    <code>
+import sqlite3
+import datetime
+import hashlib
+
+
+class AccountDB:
+    def __init__(self):
+        self.user_password_hash = None
+        self.conn = sqlite3.connect("account.db")
+        self.cursor = self.conn.cursor()
+        self.cursor.execute("""CREATE TABLE IF NOT EXISTS account_db (
+                            username text,
+                            firstname text,
+                            lastname text,
+                            dateOfBirth integer,
+                            email text,
+                            password text,
+                            isAdmin integer
+                            )""")
+
+    def insert_data(self, data_insert):
+        self.cursor.executemany("INSERT INTO account_db VALUES (?, ?, ?, ?, ?, ?, ?)", data_insert)
+        self.conn.commit()
+
+    def password_hash(self, password):
+        self.user_password_hash = hashlib.sha256(password.encode()).hexdigest()
+        return self.user_password_hash
+
+    def fetch_data(self):
+        self.cursor.execute("SELECT * FROM account_db")
+        return self.cursor.fetchall()
+
+    def get_user_name(self, username):
+        self.cursor.execute('SELECT firstname, lastname FROM account_db WHERE username = ?', (username,))
+        user = self.cursor.fetchone()
+        if user:
+            return user[0], user[1]
+        else:
+            return None, None
+
+    def close_connection(self):
+        self.conn.close()
+
+if __name__ == "__main__":
+    db = AccountDB()
+
+    data_to_insert = [
+        ('papa.brown', 'Papa', 'Brown', datetime.date(1933, 5, 3).isoformat(), 'papa.brown@copyrightmusic.com', db.password_hash("james@brown1933"), 0),
+        ('tania.turner', 'Tania', 'Turner', datetime.date(1939, 11, 26).isoformat(), 'tania.tuner@copyrightmusic.com', db.password_hash("tina@turner1939"), 0),
+        ('admin', 'Dr Stelios', 'Sotiriadis', datetime.datetime.now(), 'test.test@copyrightmusic.com', db.password_hash("admin"), 1),
+        ('user', 'Amrol', 'Miah', datetime.datetime.now(), 'test2.test2@copyrightmusic.com', db.password_hash("user"), 1)
+    ]
+
+    db.insert_data(data_to_insert)
+    print(db.fetch_data())
+    db.close_connection()
+                    </code>
+                </pre>
+            </article>
+            <br>
+            <article class="codingPost">
+                <h3>login.py</h3>
+                <pre>
+                    <code>
+from account import AccountDB
+import hashlib
+
+
+class Login:
+    def __init__(self):
+        self.cursor = None
+        self.firstname = None
+        self.lastname = None
+        self.isAdmin = None
+        self.db = AccountDB()
+
+    def login(self, username, password):
+        password_hash = hashlib.sha256(password.encode()).hexdigest()
+        print(f"Logging in with username: {username} and password: {password_hash}")
+
+        users = self.db.fetch_data()
+        if not users:
+            print("No users found in the database.")
+            return False
+
+        for user in users:
+            hashed_password = self.db.password_hash(password)
+            if username == user[0] and hashed_password == user[5]:
+                self.firstname = user[1]
+                self.lastname = user[2]
+                self.isAdmin = user[6]
+                return f"{self.firstname}, {self.lastname}, {hashed_password}"
+                if self.isAdmin:
+                    return f"You are an admin."
+                else:
+                    return f"You are not an admin."
+                return 0
+
+        print("Invalid username or password.")
+        return False
+
+    def fetch_login_data(self, firstname, lastname):
+        try:
+            self.db.cursor.execute("SELECT * FROM account_db WHERE firstname = ? AND lastname = ?", (firstname, lastname))
+            user = self.db.cursor.fetchone()
+            if user:
+                user_name = f"{user[1]} {user[2]}"
+                return user_name
+            else:
+                print("No user found.")
+                return None
+        except Exception as e:  # Catch any exceptions
+            print(f"An error occurred: {e}")
+            return None
+
+    def close_connection(self):
+        self.db.close_connection()
+                    </code>
+                </pre>
+            </article>
+            <br>
+            <article class="codingPost">
+                <h3>music_db.py</h3>
+                <pre>
+                    <code>
+import sqlite3
+import datetime
+import hashlib
+import pandas as pd
+import time
+from login import Login
+
+
+class MusicArtefactDB:
+    def __init__(self):
+        self.conn = sqlite3.connect("music_artefact.db")  # Connect to the SQLite3 database
+        self.cursor = self.conn.cursor()
+        self.cursor.execute("""CREATE TABLE IF NOT EXISTS music_artefact_db (
+                            musicID integer PRIMARY KEY AUTOINCREMENT,
+                            createdBy string,
+                            artistName string,
+                            publishDate string,
+                            lastModified string,
+                            musicTitle string,
+                            musicLyrics string,
+                            musicScore string,
+                            musicRecordChecksum string,
+                            pathToFile string,
+                            isDeleted integer)""")
+
+    @staticmethod
+    def music_txt_file(music_file_path):
+        with open(music_file_path, 'r') as music_lyrics:
+            for music_line in music_lyrics:
+                return music_line.strip()
+
+    @staticmethod
+    def music_record_hash(file_path):
+        file_hash = hashlib.sha256(file_path.encode()).hexdigest()
+        return f"{file_hash}.mp3"
+
+    def insert_data(self, data):
+        self.cursor.executemany(
+            "INSERT INTO music_artefact_db (createdBy, artistName, publishDate, lastModified, musicTitle, musicLyrics, musicScore, musicRecordChecksum, pathToFile, isDeleted) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            data)
+        self.conn.commit()
+
+    def fetch_data(self):
+        self.cursor.execute("SELECT * FROM music_artefact_db")
+        return self.cursor.fetchall()
+
+    def data_frame(self):
+        pd.options.display.max_columns = None
+        pd.set_option("display.colheader_justify", "center")
+        data_frame_var = pd.DataFrame(self.fetch_data(),
+                                      columns=[
+                                          'musicID', 'createdBy', 'artistName', 'publishDate', 'lastModified', 'musicTitle', 'musicLyrics', 'musicScore', 'musicRecordChecksum', 'pathToFile', 'isDeleted'
+                                      ])
+        return data_frame_var
+
+    def add_music_artefacts(self, username):
+        user_login_name = Login()
+        firstname, lastname = user_login_name.db.get_user_name(username)
+        createdBy = user_login_name.fetch_login_data(firstname, lastname)
+
+        artistName = str(input("Enter the artist name: "))
+
+        publish_date_input = input("Music publish date. Year, Month, Day: ")
+        publish_date_input_split = publish_date_input.split(",")
+        now = datetime.datetime.now()
+        time_now = now.strftime("%H:%M:%S")
+        year, month, day = map(int, publish_date_input_split)
+        date_str = datetime.datetime(year, month, day).strftime("%Y-%m-%d")
+        publishDate = f"{date_str} {time_now}"
+
+        lastModified = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        musicTitle = str(input("Enter the title of the music: "))
+
+        time.sleep(0.5)
+        print("Song lyrics file has been uploaded:")
+        musicLyrics = self.music_txt_file("song-file.txt")
+
+        time.sleep(0.5)
+        print("Music Score has been uploaded:")
+        musicScore = self.music_txt_file("song-file-music-score.txt")
+
+        time.sleep(0.5)
+        print(f"'{musicTitle}.mp3' has been uploaded:")
+        musicRecordChecksum = self.music_record_hash("song-file.txt")
+
+        time.sleep(0.5)
+        print(f"file path to '{musicTitle}.mp3': media/path/name/musicFile")
+        pathToFile = "media/path/name/musicFile"
+        isDeleted = 0
+
+        date_to_insert = [(createdBy, artistName, publishDate, lastModified, musicTitle,
+                          musicLyrics, musicScore, musicRecordChecksum, pathToFile, isDeleted)]
+
+        self.insert_data(date_to_insert)
+
+    def edit_music_artefacts(self, username, user):
+        musicID = input("Enter the musicID row number to update: ")
+
+        try:
+            self.cursor.execute("SELECT createdBy FROM music_artefact_db WHERE musicID = ?", (musicID,))
+            result = self.cursor.fetchone()
+            if result is None:
+                print("No record found.")
+                return 0
+            createdBy = result[0]
+
+            # Debugging lines delete once code is working
+            print(f"DEBUG: username: {username}, createdBy: {createdBy}")
+            print(f"DEBUG: user.isAdmin: {user.isAdmin}")
+
+            if createdBy != username and not user.isAdmin:
+                print("You are not authorised to edit this record.")
+                return 0
+
+            valid_columns = ["artistName", "publishDate", "musicTitle"]
+
+            if user.isAdmin:
+                column_to_update = input("Enter the column to update (artistName, publishDate, musicTitle): ")
+            else:
+                print("As a member, you can only update the musicTitle.")
+                column_to_update = "musicTitle"
+
+            if not user.isAdmin and column_to_update != "musicTitle":
+                print("You are not authorised to update this column.")
+                return 0
+
+            if column_to_update not in valid_columns:
+                print("Invalid column to update. Please enter a valid column to update.")
+                return 0
+
+            new_value = input(f"Enter the new value for {column_to_update}: ")
+
+            if column_to_update == "publishDate":
+                now = datetime.datetime.now()
+                time_now = now.strftime("%H:%M:%S")
+
+                date_format = ["-", ",", " ", ""]
+                for formatting in date_format:
+                    if formatting in new_value:
+                        try:
+                            year, month, day = map(int, new_value.split(formatting))
+                            break
+                        except ValueError:
+                            continue
+                else:
+                    print("Invalid date format. Please enter a valid date format.")
+                    print("Please enter date as year-month-day, year,month,day or year month day.")
+                    return 0
+
+                date_str = datetime.datetime(year, month, day).strftime("%Y-%m-%d")
+                new_value = f"{date_str} {time_now}"
+
+            update_sql = f"""
+            UPDATE music_artefact_db
+            SET {column_to_update} = ?
+            WHERE musicID = ?"""
+
+            self.cursor.execute(update_sql, (new_value, musicID))
+
+            lastModified = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            update_last_modified = """
+            UPDATE music_artefact_db
+            SET lastModified = ?
+            WHERE musicID = ?
+            """
+            self.cursor.execute(update_last_modified, (lastModified, musicID))
+
+            self.conn.commit()
+            print("Record updated successfully.")
+
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            self.conn.rollback()  # Rollback changes in case of error
+            return 0
+
+    def delete_music_artefacts(self, user):
+        if user.isAdmin:
+            musicID = input("Enter the musicID row number to delete: ")
+            delete_sql = """
+            DELETE FROM music_artefact_db
+            WHERE musicID = ?
+            """
+        else:
+            print("You are not authorised to delete records.")
+            return 0
+
+        self.cursor.execute(delete_sql, (musicID,))
+        self.conn.commit()
+
+    def close_connection(self):
+        self.conn.close()
+
+
+if __name__ == "__main__":
+    db = MusicArtefactDB()
+
+    data_to_insert = [
+        ('Papa Brown', 'James Brown', datetime.datetime(1965, 10, 1, 13, 30, 13).strftime("%Y-%m-%d %H:%M:%S"), datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+         'I Got You (I Feel Good)', db.music_txt_file("i-feel-good.txt"),
+         db.music_txt_file("i-feel-good_music-score.txt"), db.music_record_hash("i-feel-good.txt"),
+         'media/path/name/musicFile', 0),
+
+        ('Tania Turner', 'Tina Turner', datetime.datetime(1991, 10, 22, 11, 00, 55).strftime("%Y-%m-%d %H:%M:%S"), datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'The Best',
+         db.music_txt_file("the-best.txt"), db.music_txt_file("the-best_music-score.txt"),
+         db.music_record_hash("the-best.txt"), 'media/path/name/musicFile', 0),
+
+        ('Michael Fox', 'Michael Jackson', datetime.datetime(1982, 11, 30, 15, 30, 26).strftime("%Y-%m-%d %H:%M:%S"), datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'Billie Jean',
+         db.music_txt_file("billie-jean.txt"), db.music_txt_file("billie-jean-music-score.txt"),
+         db.music_record_hash("billie-jean.txt"), 'media/path/name/musicFile', 0),
+
+        ('Whitney Jones', 'Whitney Houston', datetime.datetime(1992, 10, 22, 18, 25, 47).strftime("%Y-%m-%d %H:%M:%S"), datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+         'I Will Always Love You',
+         db.music_txt_file("i-will-always-love-you.txt"), db.music_txt_file("i-will-always-love-you-music-score.txt"),
+         db.music_record_hash("i-will-always-love-you.txt"), 'media/path/name/musicFile', 0)
+
+    ]
+
+    db.insert_data(data_to_insert)
+    df = db.data_frame()
+    print(df.to_string())
+    db.close_connection()
+
+                    </code>
+                </pre>
+            </article>
+            <br>
+            <article class="codingPost">
+                <h3>script.py</h3>
+                <pre>
+                    <code>
+import getpass
+import time
+from login import Login
+from music_db import MusicArtefactDB
+
+
+if __name__ == "__main__":
+    while True:
+        print("Welcome to the Music Copyright Database! Please login.")
+        username = input("Enter your username: ")
+        password = getpass.getpass("Enter your password: ")
+        user = Login()
+        if user.login(username, password):
+            user_type = "Admin" if user.isAdmin else "Member"
+            print(f"You are now logged in. "
+                  f"Welcome {user.firstname} {user.lastname}! "
+                  f"Your account type: {user_type}")
+            print("---" * 20)
+            break
+
+        print("Username and password do not match. Please try again.")
+
+    while True:
+        time.sleep(0.5)
+
+        print(f"{user.firstname} select an option:")
+        print("1. View music artefacts")
+        print("2. Add music artefacts")
+        print("3. Update music artefacts")
+        print("4. Delete music artefacts")
+        print("5. Logout")
+
+        time.sleep(0.5)
+        print("---" * 20)
+        time.sleep(1)
+
+        user_option = input("Enter your option: ")
+        if user_option == "1":
+            print("View music artefacts")
+            music_data_records = MusicArtefactDB()
+            print(music_data_records.data_frame().to_string())
+            print("---" * 20)
+            continue
+
+        elif user_option == "2":
+            print("Add music artefacts")
+            music_data_records = MusicArtefactDB()
+            music_data_records.add_music_artefacts(username)
+            print(music_data_records.data_frame().to_string())
+            print("---" * 20)
+            continue
+
+        elif user_option == "3":
+            print("Update music artefacts")
+            print("---" * 20)
+            print("Current music artefacts")
+            music_data_records = MusicArtefactDB()
+
+            music_data_records.edit_music_artefacts(username, user)
+            print(music_data_records.data_frame().to_string())
+            print("---" * 20)
+            continue
+
+        elif user_option == "4":
+            print("Delete music artefacts")
+            music_data_records = MusicArtefactDB()
+            music_data_records.delete_music_artefacts(user)
+            print(music_data_records.data_frame().to_string())
+            print("---" * 20)
+            continue
+
+        elif user_option == "5":
+            print("Logging out...")
+            user.close_connection()
+            break
+        else:
+            print("Invalid option. Please try again.")
+            continue
+        break
+
+    music_data_records.close_connection()
+                    </code>
+                </pre>
+            </article>
+            <!--References Accordio -->
+            <div id="accordio">
+                <ul>
+                    <li>
+                        <input type="checkbox" checked>
+                        <i></i>
+                        <h2>References:</h2>
+                        <!-- Reference content -->
+                        <p>
+                            <br><br>
+                            <cite>Bandit (n.d.). <em>Getting Started — Bandit documentation.</em> [online] bandit.readthedocs.io. Available at: <a href="https://bandit.readthedocs.io/en/latest/start.html" target="_blank">https://bandit.readthedocs.io/en/latest/start.html</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>Cordasco, I.S. (2016a). <em>Error / Violation Codes — flake8 5.0.4 documentation.</em> [online] flake8.pycqa.org. Available at: <a href="https://flake8.pycqa.org/en/latest/user/error-codes.html" target="_blank">https://flake8.pycqa.org/en/latest/user/error-codes.html</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>Cordasco, I.S. (2016b). <em>Flake8: Your Tool For Style Guide Enforcement — flake8 6.0.0 documentation.</em> [online] flake8.pycqa.org. Available at: <a href="https://flake8.pycqa.org/en/latest/" target="_blank">https://flake8.pycqa.org/en/latest/</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>Corey Schafer (2017). <em>Python SQLite Tutorial: Complete Overview - Creating a Database, Table, and Running Queries.</em> [online] YouTube. Available at: <a href="https://youtu.be/pd-0G0MigUA?si=FjlXRwXLKwMW-M67" target="_blank">https://youtu.be/pd-0G0MigUA?si=FjlXRwXLKwMW-M67</a> [Accessed 18 May 2024].</cite>
+                            <br><br>
+                            <cite>Flake8rules (n.d.). <em>Line too long (82 > 79 characters) (E501).</em> [online] www.flake8rules.com. Available at: <a href="https://www.flake8rules.com/rules/E501.html" target="_blank">https://www.flake8rules.com/rules/E501.html</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>Flake8rules (n.d.). <em>Trailing whitespace (W291).</em> [online] www.flake8rules.com. Available at: <a href="https://www.flake8rules.com/rules/W291.html" target="_blank">https://www.flake8rules.com/rules/W291.html</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>Jetbrains (2016). <em>How to See More than Five Columns of a Data Frame Output in PyCharm Run Window.</em> [online] https://intellij-support.jetbrains.com. Available at: <a href="https://intellij-support.jetbrains.com/hc/en-us/community/posts/203929730-How-to-see-more-than-five-columns-of-a-data-frame-output-in-PyCharm-run-window" target="_blank">https://intellij-support.jetbrains.com/hc/en-us/community/posts/
+                                203929730-How-to-see-more-than-five-columns-of-a-data-frame-output-in-PyCharm-run-window</a> [Accessed 21 May 2024].</cite>
+                            <br><br>
+                            <cite>Mitre (2013). <em>CWE - CWE-89: Improper Neutralization of Special Elements used in an SQL Command</em> (‘SQL Injection’) (3.4.1). [online] Mitre.org. Available at: <a href="https://cwe.mitre.org/data/definitions/89.html" target="_blank">https://cwe.mitre.org/data/definitions/89.html</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>Packetcoders (2022). <em>flake8.</em> [online] Packet Coders. Available at: <a href="https://www.packetcoders.io/flake8/" target="_blank">https://www.packetcoders.io/flake8/</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>PyCQA (2024). <em>bandit: Security oriented static analyser for python code.</em> [online] PyPI. Available at: <a href="https://pypi.org/project/bandit/" target="_blank">https://pypi.org/project/bandit/</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>Pymotw (n.d.). <em>getpass – Prompt the user for a password without echoing. - Python Module of the Week.</em> [online] pymotw.com. Available at: <a href="https://pymotw.com/2/getpass/" target="_blank">https://pymotw.com/2/getpass/</a> [Accessed 20 May 2024].</cite>
+                            <br><br>
+                            <cite>Python Software Foundation (2002). <em>Datetime — Basic Date and Time Types — Python 3.7.2 Documentation.</em> [online] Python.org. Available at: <a href="https://docs.python.org/3/library/datetime.html" target="_blank">https://docs.python.org/3/library/datetime.html</a> [Accessed 19 May 2024].</cite>
+                            <br><br>
+                            <cite>Python, R. (2019). <em>Preventing SQL Injection Attacks With Python – Real Python.</em> [online] realpython.com. Available at: <a href="https://realpython.com/prevent-python-sql-injection/" target="_blank">https://realpython.com/prevent-python-sql-injection/</a> [Accessed 18 May 2024].</cite>
+                            <br><br>
+                            <cite>Safetycli (2024). <em>Safety CLI 3 - Python Vulnerability Scanner.</em> [online] safetycli.com. Available at: <a href="https://safetycli.com/product/safety-cli" target="_blank">https://safetycli.com/product/safety-cli</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                            <cite>Saturn Cloud (2023). <em>How to Show All Column Names on a Large Pandas DataFrame | Saturn Cloud Blog.</em> [online] saturncloud.io. Available at: <a href="https://saturncloud.io/blog/how-to-show-all-column-names-on-a-large-pandas-dataframe/" target="_blank">https://saturncloud.io/blog/how-to-show-all-column-names-on-a-large-pandas-dataframe/</a> [Accessed 21 May 2024].</cite>
+                            <br><br>
+                            <cite>Socratica (2023). <em>SQLite in Python || Python Tutorial || Learn Python Programming.</em> [online] YouTube. Available at: <a href="https://youtu.be/c8yHTlrs9EA?si=U3KFM6UlchGbKEXo" target="_blank">https://youtu.be/c8yHTlrs9EA?si=U3KFM6UlchGbKEXo</a> [Accessed 18 May 2024].</cite>
+                            <br><br>
+                            <cite>SQLite (2014). <em>Datatypes In SQLite Version 3.</em> [online] Sqlite.org. Available at: <a href="https://www.sqlite.org/datatype3.html" target="_blank">https://www.sqlite.org/datatype3.html</a> [Accessed 18 May 2024].</cite>
+                            <br><br>
+                            <cite>Sumologic (n.d.). <em>What is CRUD? Explaining CRUD Operations.</em> [online] Sumo Logic. Available at: <a href="https://www.sumologic.com/glossary/crud/" target="_blank">https://www.sumologic.com/glossary/crud/</a> [Accessed 28 May 2024].</cite>
+                            <br><br>
+                            <cite>van Rossum, G., Warsaw, B. and Coghlan, N. (2001). <em>PEP 8 – Style Guide for Python Code.</em> [online] peps.python.org. Available at: <a href="https://peps.python.org/pep-0008/" target="_blank">https://peps.python.org/pep-0008/</a> [Accessed 29 May 2024].</cite>
+                            <br><br>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Button to nagigate to the the next page -->
+            <ul class="actions">
+                <li><a href="../../posts/04-secure-software-development/secure-software-development.html" class="button">Back</a></li>
+                 <li><a href="../../posts/04-secure-software-development/development-team-project_copyright-infringement.html" class="button">Read the group report</a></li>
+            </ul>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://uk.linkedin.com/in/amrol-b-miah-390b3b35?trk=org-employees" target="_blank" class="icon brands fa-brands fa-linkedin-in"><span class="label">linkedin</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="https://www.instagram.com/amrolbm/?hl=en" target="_blank" class="icon brands fa-brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon solid fa-solid fa-user-secret"><span class="label">Securit Agent</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Amrol B. Miah 2023</li>
+                <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
