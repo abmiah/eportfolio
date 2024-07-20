@@ -3293,7 +3293,12 @@ input, select, textarea {
 	} .peersResponse cite {
 		font-size: 16px;
 		line-height: 4px;
-		
+	} .peersResponse ul li {
+	    font-size: 16px;
+	    line-height: 150%;
+	} peersResponse ol li {
+	    font-size: 16px;
+	    line-height: 150%;
 	}
 
 	/* Footer icons  */
