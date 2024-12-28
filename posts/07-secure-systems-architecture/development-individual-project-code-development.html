@@ -1,0 +1,513 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!-- initial-post1-summary-module2.html -->
+<html>
+
+<head>
+    <title>Strata by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="../../index.html" class="image avatar"><img src="../../images/adnan-khan-VS2C5_GI_MM-unsplash_600x600.jpg" alt="" /></a>
+            <h1>Hi there, I'm <strong>Amrol B. Miah</strong> <br /> A MSc Cyber Security student<br /> based in London.</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../content.html">MSc Cybersecurity</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Get in Touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main -->
+    <div id="main">
+        <!-- Body Content -->
+        <section id="one">
+            <!-- Main Title-->
+            <header class="major">
+                <h2>Development Individual Project: Code Development</h2>
+                <!-- Sub Heading-->
+                <p class="subheading">Final assignment - Unit 6</p>
+                <!-- Post Date-->
+                <p><em>Saturday, 30 November 2024, 7:38 PM</em></p>
+            </header>
+            <!-- Main Body Content-->
+            <article>
+
+                <h3>README Documentation</h3>
+                <p><b>1. Introduction</b></p>
+                <p>This README documentation presents a comprehensive examination of the evolution of initial collaborative efforts that culminated in the development of the Attack-Defence Tree (AD) within the context of a System of Systems (SoS) framework. The analysis is informed by a case study conducted by Kodali et al. (2016), which identifies various vulnerabilities associated with the IoT, employing the AD tool to uncover potential weaknesses. This inquiry is particularly pertinent to the domain of IoT, with a specific focus on a smart home security system that utilises Wi-Fi technology to notify users of unauthorised access attempts. This IoT device functions as an integrated network of multiple SoS, encompassing an array of interconnected sensors and cameras managed through a centralised hub.</p>
+                <p>Given the vulnerabilities revealed in the AD analysis, one must develop a hypothesis grounded in one of the ABCDE methodologies: autonomy, belonging, connectivity, diversity, and emergence (Boardman & Sauser, 2006). This document will analyse a specific methodology and its relation to the hypothesis with a code output and provide an overview of the code and its documents. </p>
+                <p>The hypothesis will be predicated on the default password used within the central hub, as found in the AD analysis. The code is implemented in Python, using object-oriented programming (OOP) principles. This methodology will rigorously evaluate the proposition by conducting a series of tests to verify the integrity of the password as a viable mitigation strategy.</p>
+
+                <p><b>GitHub repository:</b>
+                <a href="https://github.com/abmiah/CodeDevelopment_Unit6.git" target="_blank">https://github.com/abmiah/CodeDevelopment_Unit6.git</a>
+                </p>
+                <p><b>Video sample:</b>
+                <a href="https://www.youtube.com/watch?v=Av_VLlPn6bo" target="_blank">https://www.youtube.com/watch?v=Av_VLlPn6bo</a>
+                </p>
+
+                <p><b>2. Default Password</b></p>
+                <p>Manufacturers developing Internet of Things (IoT) devices frequently establish default passwords, known as universal default passwords (UDPs). The rationale behind manufacturers' implementation of UDPs is multifaceted. According to Cybertechaccord (2024), one primary objective for instituting UDPs is facilitating device accessibility when users inadvertently become locked out. Furthermore, UDPs enable engineers to conduct updates and perform diagnostic testing on devices effectively.  However, UDP settings have several vulnerabilities that open them to attacks.  According to Borgeaud (2023), one of the most common IoT default passwords is “admin”. </p>
+                <p>From 2022 to 2024, the UK enacted new legislation under the Conservative government to enhance cybersecurity protocols. This legislative framework prohibits manufacturers from establishing weak, easily predictable passwords while permitting users to modify the default password allocated during the initial configuration (GOV.UK, 2024).</p>
+
+                <p><b>3. Methodology </b></p>
+                <p>Boardman and Sauser (2006) state the intricacies associated with system design, particularly in the context of SoS. They highlight the critical significance of managing the connectivity between various systems and subsystems. A fundamental principle for engineers is the continual reduction of interfaces among subsystems; however, this principle encounters substantial challenges in SoS environments, especially when integrating legacy systems with contemporary and developing systems. Ensuring interoperability may necessitate the revelation of certain internal connections, which are conventionally obscured at the system's boundaries. Additionally, it is significant that legacy systems frequently employ default passwords, a factor that presents considerable security risks, particularly when IoT devices are integrated into the network.</p>
+
+                <p><b>4. Code output </b></p>
+                <p>This project constitutes a comprehensive password assessment tool designed to evaluate the strength and security of administrative passwords. It systematically compares the provided password against a database of commonly compromised passwords derived from the NCSC (2012). The assessment encompasses an analysis of the password's length and character diversity. If the password is weak, the program generates an alternative password. Furthermore, the project incorporates an authentication server dedicated to verifying password attempts.</p>
+                <p>The primary objective of the script is to guarantee the security of the initial administrator password designated for the IoT Hub. It conducts a series of evaluations to assess the robustness of the password and implements strategies to address vulnerabilities associated with weak passwords by generating new, more robust alternatives.</p>
+
+                <p><b>4.1. Key characteristics of the script.</b></p>
+                <uL>
+                    <li><b>Comparing the password against NCSC pwned passwords:</b> This function evaluates the presence of the specified password within the NCSC <code>PwnedPasswordsTop100k.txt</code> database file. </li>
+                    <li><b>Encrypting password:</b> SHA-256 encryption from the hashlib library is used to hash the password.</li>
+                    <li><b>Length of the password and character types used:</b> Ensure the password meets the requisite length and complexity requirements criteria. </li>
+                    <li><b>Password mitigation is found to be weak:</b> Generates a novel, randomly generated password upon the replacement of the current one weak. </li>
+                    <li><b>Authentication server:</b> Establishes a fundamental authentication server designed to assess and verify password submission attempts.</li>
+                </uL>
+
+                <p><b>4.2. System Requirements. </b></p>
+                <ul>
+                    <li>Python 3.11.3 (The code has been developed using the latest version of Python; therefore, older versions may not be capable of executing the script effectively)</li>
+                    <li>Requests library: this library retrieves the NSCS (2012) PwnedPasswordsTop100k.txt file using the requests library to fetch data.- pip install requests</li>
+                    <li>Colorama library is primarily aimed at enhancing visual presentation during console output, thereby facilitating improved readability. - pip install colorama </li>
+                </ul>
+
+                <p><b>4.3. Clone repository.</b></p>
+                <p>You can clone the initial code from the GitHub repository using the following link: <a href="https://github.com/abmiah/CodeDevelopment_Unit6.git" target="_blank">https://github.com/abmiah/CodeDevelopment_Unit6.git</a>.</p>
+
+                <p><b>4.4. Running the script</b></p>
+                <ol>
+                    <li>Run the main script <b>mainScript_CheckPassword.py:</b> </li>
+                    <li>Follow the prompts to set an admin password, and enter a common password such as password123, qwert, or admin.</li>
+                    <li>The script will start an authentication server and perform various checks on the password.</li>
+                </ol>
+
+                <p><b>4.5. Script Descriptions</b></p>
+                <ul>
+                    <li><b>adminPassword.py:</b> Manages the configuration of the admin password and initiates the authentication server, Figure 1.</li>
+                    <li><b>pwnedPasswordCheck.py:</b> Verifies whether the password appears in the NCSC PwnedPasswordsTop100k.txt file, as shown in Figure 2.</li>
+                    <li><b>hashPassword.py:</b> Hashes the password using SHA-256 and checks if the password is valid hashed, Figure 3.</li>
+                    <li><b>passwordCount.py:</b> Assesses the password's length and character types to determine its strength, Figure 4.</li>
+                    <li><b>newPassword.py:</b> Creates a new random password in case the existing one is weak, as shown in Figure 5.</li>
+                    <li><b>mainScript_CheckPassword.py:</b> This is the primary script responsible for managing password verification process, Figure 6.</li>
+                 </ul>
+
+                <p><b>4.6.	Classes and Methods Overview </b></p>
+                <p><b>adminPassword.py,</b> Figure 1.</p>
+                <ul>
+                    <li><b>AdminPassword:</b> Admin password and authentication management class server./li>
+                    <li><b>load_weak_passwords():</b> Retrieves a collection of insecure passwords from a URL.</li>
+                    <li><b>is_weak_password(password):</b> Verifies the validity of a password weak.</li>
+                    <li><b>start_auth_server():</b> Initiates the authentication process server.</li>
+                    <li><b>stop_auth_server():</b> Halts the authentication process server.</li>
+                </ul>
+                <pre><code>
+import socket
+import requests
+
+class AdminPassword:
+
+    def __init__(self):
+        self.password = input("Please set an admin password: ")
+        print(f"The admin password for the IoT Hub is: {self.password}")
+        self.weak_passwords = self.load_weak_passwords()
+        self.running = True
+
+    @staticmethod
+    def load_weak_passwords():
+        url = 'https://www.ncsc.gov.uk/static-assets/documents/PwnedPasswordsTop100k.txt'
+        response = requests.get(url)
+        if response.status_code == 200:
+            return set(response.text.splitlines())
+        else:
+            print("Failed to load weak passwords list. Using a default list.")
+            return {'password', '123456', 'admin'}
+
+    def is_weak_password(self, password):
+        return password in self.weak_passwords
+
+    def start_auth_server(self):
+        server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server_socket.bind(('localhost', 12345))
+        server_socket.listen(1)
+        print("Authentication server started on localhost:12345")
+
+        try:
+            while self.running:
+                client_socket, address = server_socket.accept()
+                print(f"Connection from {address}")
+
+                password_attempt = client_socket.recv(1024).decode().strip()
+
+                if password_attempt == self.password:
+                    if self.is_weak_password(password_attempt):
+                        response = "Authentication successful, but password is weak. Please change it."
+                    else:
+                        response = "Authentication successful."
+                else:
+                    response = "Authentication failed."
+
+                client_socket.send(response.encode())
+                client_socket.close()
+        except KeyboardInterrupt:
+            print("\nThe server is shutting down...")
+        finally:
+            server_socket.close()
+
+    def stop_auth_server(self):
+        self.running = False
+
+if __name__ == "__main__":
+    admin = AdminPassword()
+    admin.start_auth_server()
+                </code></pre>
+                <p><b>Figure 1:</b> adminPassword.py - Configures the admin password and starts the authentication server.</p>
+
+                <p><b>pwnedPasswordCheck.py</b>, Figure 2.</p>
+                <ul>
+                    <li><b>PwnedURL:</b> Class for verifying if a password appears in PwnedPasswordsTop100k.txt file.</li>
+                    <li><b>get_password_list():</b> Obtains the list of compromised accounts passwords.</li>
+                </ul>
+
+                <pre><code>
+import requests
+
+class PwnedURL:
+
+    def __init__(self):
+        self.url = "https://www.ncsc.gov.uk/static-assets/documents/PwnedPasswordsTop100k.txt"
+
+    def get_password_list(self):
+        response = requests.get(self.url, auth=('user', 'pass'))
+        if response.status_code == 200:
+            return response.text.splitlines()
+        else:
+            return []
+
+if __name__ == "__main__":
+    url = PwnedURL()
+    password_list = url.get_password_list()
+    print(password_list)
+                </code></pre>
+                <p><b>Figure 2:</b> pwndPasswordCheck.py - Checks if the password is in the NCSC PwnedPasswordsTop100k.txt file.</p>
+
+                <p><b>hashPassword.py</b>, Figure 3.</p>
+                <ul>
+                    <li><b>PasswordHash:</b> A class for hashing and verification of passwords.</li>
+                    <li><b>hash_password(password):</b> Applies hashing to a password using SHA-256.</li>
+                    <li><b>is_password_hashed(password): </b> Verifies if a password is hashed.</li>
+                    <li><b>print_hashed_password():</b> Outputs the hashed information password.</li>
+                </ul>
+                <pre><code>
+import hashlib
+
+class PasswordHash:
+    def __init__(self, admin_password):
+        self.admin = admin_password
+        self.hashed_password = self.hash_password(self.admin.password)
+
+    @staticmethod
+    def hash_password(password):
+        return hashlib.sha256(password.encode()).hexdigest()
+
+    def is_password_hashed(self, password):
+        return password == self.hashed_password
+
+    def print_hashed_password(self):
+        print(f"The hashed password is: {self.hashed_password}")
+
+
+if __name__ == "__main__":
+    hasher = PasswordHash()
+    hasher.print_hashed_password()
+                </code></pre>
+                <p><b>Figure 3:</b> hashPassword.py - Hashes the password with SHA-256 and checks validity hashed.</p>
+
+                <p><b>passwordCount.py</b>, Figure 4.</p>
+                <ul>
+                    <li><b>PasswordCount:</b> Evaluate the length and types of characters within a string password.</li>
+                    <li><b>count_password_length(password):</b> Counts the length of a string password.</li>
+                    <li><b>print_password_length():</b> Prints the length of a password.</li>
+                    <li><b>check_character_types(password):</b> Checks the character types of a password.</li>
+                    <li><b>print_character_types():</b> Displays the types of characters in a password.</li>
+                    <li><b>evaluate_password_strength():</b> Evaluate the potency of a password.</li>
+                    <li><b>print_password_strength():</b> Outputs the strength of a password.</li>
+                    <li><b>is_password_weak():</b> Verifies the validity of a password weak.</li>
+                </ul>
+
+                <pre><code>
+from adminPassword import AdminPassword
+
+class PasswordCount:
+    def __init__(self, admin_password):
+        self.admin = admin_password
+        self.count = self.count_password_length(self.admin.password)
+        self.character_types = self.check_character_types(self.admin.password)
+        self.score = self.evaluate_password_strength()
+
+    @staticmethod
+    def count_password_length(password):
+        return len(password)
+
+
+    def print_password_length(self):
+        print(f"The password length \"{self.admin.password}\": is {self.count} characters long")
+        if self.count <= 8:
+            print("The password should be at least 8 characters long")
+            print("Your password must combine uppercase, lowercase, numbers, and special characters.")
+
+    @staticmethod
+    def check_character_types(password):
+        return {
+            "Uppercase": sum(1 for char in password if char.isupper()),
+            "Lowercase": sum(1 for char in password if char.islower()),
+            "Numeric": sum(1 for char in password if char.isdigit()),
+            "Special": sum(1 for char in password if not char.isalnum()),
+        }
+        # return types
+
+    def print_character_types(self):
+        print(f"Password \"{self.admin.password}\" contains:")
+        for key, value in self.character_types.items():
+            # print(f"{key}: {'Yes' if value else 'No'}")
+            print(f"{key}: {'Yes' if value else 'No'} = {value} characters")
+
+    def evaluate_password_strength(self):
+        score = sum([
+            self.count >= 8,
+            self.character_types["Uppercase"] > 1,
+            self.character_types["Lowercase"] > 1,
+            self.character_types["Numeric"] > 1,
+            self.character_types["Special"] > 1
+        ])
+        return "Weak" if score <= 2 else "Moderate" if score <= 4 else "Strong"
+
+    def print_password_strength(self):
+        print(f"Password \"{self.admin.password}\" has a strength rating of: {self.score}")
+
+    def is_password_weak(self):
+        return len(self.admin.password) < 8 or self.score in {"Weak", "Moderate"}
+
+
+if __name__ == "__main__":
+    admin = AdminPassword()
+    password_count = PasswordCount(admin)
+    password_count.print_password_length()
+    password_count.print_character_types()
+    password_count.print_password_strength()
+                </code></pre>
+                <p><b>Figure 4:</b> passwordCount.py - Evaluates password length and character strength.</p>
+
+                <p><b>newPassword.py</b>, Figure 5.</p>
+                <ul>
+                    <li><b>NewPassword:</b> Class for creating a new random password.</li>
+                    <li><b>random_password(length):</b> Creates a random password that is 25 characters in length characters.</li>
+                    <li><b></b> Outputs the new random password.</li>
+                </ul>
+                <pre><code>
+import random
+import string
+import hashlib
+
+class NewPassword:
+    def __init__(self):
+        self.password = self.random_password()
+
+    @staticmethod decorator as a class method."""
+    @staticmethod
+    def random_password(length=25):
+        characters = string.ascii_letters + string.digits + string.punctuation
+        return ''.join(random.choices(characters, k=length))
+
+    def print_password(self):
+        hashed_password = hashlib.sha256(self.password.encode()).hexdigest()
+        print(f"Please set a new password: \"{self.password}\". Encrypted password: \"{hashed_password}\"")
+
+
+if __name__ == "__main__":
+    password = NewPassword()
+    password.print_password()
+                </code></pre>
+                <p><b>Figure 5:</b> newPassword.py - Generates a new random password if the current one is weak</p>
+
+                <p><b>mainScript_CheckPassword.py</b>, Figure 6.</p>
+                <p>The main program executes the script within the console environment. It systematically invokes all the ancillary files essential for the program's operational functionality. It also employs threading to initiate the authentication server in an isolated thread. </p>
+
+                <ul>
+                    <li><b>PasswordChecker:</b> Examines the different aspects of the admin password.</li>
+                    <li><b>check_password_from_pwned():</b> Verifies if the password appears in the PwnedPasswordsTop100k.txt.</li>
+                    <li><b>check_password_hashed():</b> Verifies whether the password is hashed.</li>
+                    <li><b>check_password_length():</b> Evaluate the password's length and character types.</li>
+                    <li><b>new_password():</b> Creates and prints a new random password when the existing password is weak.</li>
+                </ul>
+
+                <pre><code>
+import threading
+import time
+from colorama import Fore
+
+from adminPassword import AdminPassword
+from pwnedPasswordCheck import PwnedURL
+from hashPassword import PasswordHash
+from passwordCount import PasswordCount
+from newPassword import NewPassword
+
+class PasswordChecker:
+    def __init__(self, hub_password):
+        self.admin = hub_password
+        self.url = PwnedURL()
+        self.hasher = PasswordHash(self.admin)
+        self.new_random_password = NewPassword()
+
+
+    def check_password_from_pwned(self):
+        password_list = self.url.get_password_list()
+        if self.admin.password in password_list:
+            print(f"\"{self.admin.password}\" Password is listed in NCSC PwnedPasswordsTop100k.txt")
+        else:
+            print(f"\"{self.admin.password}\" Password is not listed in NCSC PwnedPasswordsTop100k.txt")
+
+
+    def check_password_hashed(self):
+        if self.hasher.is_password_hashed(self.admin.password):
+            print(f"The password \"{self.admin.password}\" is hashed")
+        else:
+            print(f"The password \"{self.admin.password}\" is not hashed. \"{self.admin.password}\" as hashed \"{self.hasher.hashed_password}\"")
+
+
+    def check_password_length(self):
+        password_count = PasswordCount(self.admin)
+        password_count.print_password_length()
+        password_count.print_character_types()
+        password_count.print_password_strength()
+
+
+    def new_password(self):
+        password_count = PasswordCount(self.admin)
+        if password_count.is_password_weak():
+            self.new_random_password.print_password()
+        else:
+            print(Fore.GREEN + "No mitigation process is required" + Fore.RESET)
+
+
+def slow_print(message):
+    print(message)
+    time.sleep(1.5)
+    print("-" * 50)
+
+
+if __name__ == "__main__":
+    admin_password = AdminPassword()
+    slow_print(Fore.BLUE + "Please wait..." + Fore.RESET)
+
+    server_thread = threading.Thread(target=admin_password.start_auth_server)
+    server_thread.daemon = True
+    server_thread.start()
+
+    slow_print(Fore.BLUE + "Starting server, please wait..." + Fore.RESET)
+    password_checker = PasswordChecker(admin_password)
+
+    slow_print(Fore.BLUE + "Checking password, please wait..." + Fore.RESET)
+    password_checker.check_password_from_pwned()
+    slow_print(Fore.BLUE + "Checking password, please wait..." + Fore.RESET)
+    password_checker.check_password_hashed()
+    slow_print(Fore.BLUE + "Checking password, please wait..." + Fore.RESET)
+    slow_print(Fore.BLUE + "Checking password weakness, please wait..." + Fore.RESET)
+    password_checker.check_password_length()
+    slow_print(Fore.GREEN + "Password check completed" + Fore.RESET)
+    slow_print(Fore.RED + "Mitigation process to follow..." + Fore.RESET)
+    password_checker.new_password()
+
+    admin_password.stop_auth_server()
+                </code></pre>
+                <p><b>Figure 6:</b> mainScript_CheckPassword.py - This script manages the password verification process</p>
+
+                <h3>Video demonstration</h3>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/Av_VLlPn6bo" title="Code Development - Secure Systems Architecture – Unit 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </article>
+<!--            References Accordio-->
+            <div id="accordio">
+                <ul>
+                    <li>
+                        <input type="checkbox" checked>
+                        <i></i>
+                        <h2>References:</h2>
+                        <!-- Reference content -->
+                        <p>
+                            <br><br>
+                            <cite>Boardman, J. and Sauser, B. (2006). System of Systems - the meaning of of. <em>2006 IEEE/SMC International Conference on System of Systems Engineering.</em> [online] doi:<a href="https://doi.org/10.1109/sysose.2006.1652284" target="_blank">https://doi.org/10.1109/sysose.2006.1652284</a> [Accessed 24 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Borgeaud, A. (2023). <em>Frequently seen passwords in IoT devices 2021.</em> [online] Statista. Available at: <a href="https://www.statista.com/statistics/1298495/frequently-seen-passwords-in-iot-devices/" target="_blank">https://www.statista.com/statistics/1298495/frequently-seen-passwords-in-iot-devices/</a> [Accessed 25 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Cybertechaccord (2024). <em>No Universal Default Passwords.</em> [online] Cybertechaccord.org. Available at: <a href="https://cybertechaccord.org/no-universal-default-passwords/" target="_blank">https://cybertechaccord.org/no-universal-default-passwords/</a> [Accessed 25 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>GOV.UK (2024). <em>New laws to protect consumers from cyber criminals come into force in the UK.</em> [online] GOV.UK. Available at: <a href="https://www.gov.uk/government/news/new-laws-to-protect-consumers-from-cyber-criminals-come-into-force-in-the-uk" target="_blank">https://www.gov.uk/government/news/new-laws-to-protect-consumers-from-cyber-criminals-come-into-force-in-the-uk</a> [Accessed 25 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Hartley, J. (2022). <em>colorama: Cross-platform Colored Terminal text.</em> [online] PyPI. Available at: <a href="https://pypi.org/project/colorama/" target="_blank">https://pypi.org/project/colorama/</a> [Accessed 18 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Jain, Y. (2023). <em>How to Print Colored Text in Python - Studytonight.</em> [online] www.studytonight.com. Available at: <a href="https://www.studytonight.com/python-howtos/how-to-print-colored-text-in-python" target="_blank">https://www.studytonight.com/python-howtos/how-to-print-colored-text-in-python</a> [Accessed 18 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Miessler, D. (2022). <em>10-million-password-list-top-10000.txt.</em> [online] GitHub. Available at: <a href="https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-10000.txt" target="_blank">https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-10000.txt</a> [Accessed 17 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>NCSC (2012). <em>PwnedPasswordsTop100k.txt.</em> [online] Ncsc.gov.uk. Available at: <a href="https://www.ncsc.gov.uk/static-assets/documents/PwnedPasswordsTop100k.txt" target="_blank">https://www.ncsc.gov.uk/static-assets/documents/PwnedPasswordsTop100k.txt</a> [Accessed 16 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Python (2020a). <em>socket — Low-level networking interface — Python 3.8.1 documentation.</em> [online] Python.org. Available at: <a href="https://docs.python.org/3/library/socket.html" target="_blank">https://docs.python.org/3/library/socket.html</a> [Accessed 20 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Python (2020b). <em>threading — Thread-based parallelism — Python 3.9.0 documentation.</em> [online] docs.python.org. Available at: <a href="https://docs.python.org/3/library/threading.html" target="_blank">https://docs.python.org/3/library/threading.html</a> [Accessed 20 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Python (2024). <em>hashlib — Secure hashes and message digests — Python 3.8.4rc1 documentation.</em> [online] docs.python.org. Available at: <a href="https://docs.python.org/3/library/hashlib.html" target="_blank">https://docs.python.org/3/library/hashlib.html</a> [Accessed 17 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>python.org (2024). <em>string — Common string operations — Python 3.9.1 documentation.</em> [online] docs.python.org. Available at: <a href="https://docs.python.org/3/library/string.html" target="_blank">https://docs.python.org/3/library/string.html</a> [Accessed 18 Nov. 2024].</cite>
+                            <br><br>
+                            <cite>Reitz, K. (2023). <em>requests: Python HTTP for Humans.</em> [online] PyPI. Available at: <a href="https://pypi.org/project/requests/" target="_blank">https://pypi.org/project/requests/</a> [Accessed 16 Nov. 2024].</cite>
+                            <br><br>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Button to nagigate to the the next page -->
+            <ul class="actions">
+                <li><a href="../../posts/07-secure-systems-architecture/secure-systems-architecture.html" class="button">Back</a></li>
+<!--                <li><a href="../../posts/07-secure-systems-architecture/#" class="button">Read the coding output</a></li>-->
+            </ul>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://uk.linkedin.com/in/amrol-b-miah-390b3b35?trk=org-employees" target="_blank" class="icon brands fa-brands fa-linkedin-in"><span class="label">linkedin</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="https://www.instagram.com/amrolbm/?hl=en" target="_blank" class="icon brands fa-brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon solid fa-solid fa-user-secret"><span class="label">Securit Agent</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Amrol B. Miah 2023</li>
+                <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

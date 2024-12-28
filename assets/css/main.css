@@ -3228,7 +3228,7 @@ input, select, textarea {
 	/* Element Section*/
 	.list-links {
 		color: #49bf9d;
-		font-size: 16px;
+		font-size: 20px;
 	} .list-links:hover {
 		color: darkmagenta;
 	}
@@ -3292,7 +3292,7 @@ input, select, textarea {
 		line-height: 150%;
 	} .peersResponse cite {
 		font-size: 16px;
-		line-height: 4px;
+		line-height: 1px;
 	} .peersResponse ul li {
 	    font-size: 16px;
 	    line-height: 150%;
@@ -3323,8 +3323,9 @@ input, select, textarea {
 	/* Accordio for References*/
 	#accordio {
   
-  margin: 50px auto;
-  text-align: center;
+      margin: 50px auto;
+      text-align: center;
+      width: fit-content;
 	}
 
 	section.accordio {
@@ -3382,6 +3383,8 @@ input, select, textarea {
 		transition: .3s opacity, .6s max-height;
 		hyphens: auto;
 		z-index: 2;
+
+		width: fit-content;
 	}
 
 	#accordio a {

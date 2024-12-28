@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!-- initial-post1-summary-module2.html -->
+<html>
+
+<head>
+    <title>Strata by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="../../index.html" class="image avatar"><img src="../../images/adnan-khan-VS2C5_GI_MM-unsplash_600x600.jpg" alt="" /></a>
+            <h1>Hi there, I'm <strong>Amrol B. Miah</strong> <br /> A MSc Cyber Security student<br /> based in London.</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../content.html">MSc Cybersecurity</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Get in Touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main -->
+    <div id="main">
+        <!-- Body Content -->
+        <section id="one">
+            <!-- Main Title-->
+            <header class="major">
+                <h2>Development Team Project: Design Document - Group Submission</h2>
+                <!-- Sub Heading-->
+                <p class="subheading">Group assignment - Unit 3</p>
+                <!-- Post Date-->
+                <p><em>Friday, 8 November 2024, 2:15 PM</em></p>
+            </header>
+            <!-- Main Body Content-->
+            <article>
+
+                <p><b>1. Introduction</b></p>
+                <p>This documentation reviews a case study by Kodali et al. (2016) on using IoT technologies for a security and home automation system which leverages Wi-Fi to notify users of unauthorized access and manage applications. The document also assesses an Attack-Defense Tree (AD) in a System of Systems (SoS) using distributed devices, sensors, cameras, and appliances connected to a central hub. This approach aligns with the ABCDE model's SoS concept, enabling autonomous yet collaborative home automation and security.</p>
+
+                <p><b>2. Potential vulnerabilities:</b></p>
+                <ul>
+                    <li><b>Weak Authentication:</b> IoT devices often have weak passwords, making them vulnerable to brute force and credential stuffing attacks. Sicari et al. (2015) highlight that unchanged default credentials provide easy access for attackers.</li>
+                    <li><b>Lack of Encryption:</b> Unencrypted communication between IoT devices and their controllers leaves data vulnerable to interception. Alrawais et al. (2017) emphasize that insufficient encryption in IoT systems is a major risk, as attackers can easily perform man-in-the-middle attacks on unencrypted communications.</li>
+                    <li><b>Unpatched Software/Firmware:</b> Many IoT devices have outdated firmware, making them vulnerable. Kolias et al. (2017) show how this contributed to the Mirai botnet attacks, which targeted IoT devices with unpatched firmware in DDoS attacks. Bhardwaj et al. (2024) note that IoT firmware distribution through support portals can enable unauthorized access and reverse-engineer embedded passwords.</li>
+                    <li><b>Insufficient Access Control:</b> Weak access control mechanisms permit unauthorized access to IoT networks. According to Zarpelão et al. (2017) vulnerability of IoT systems to intrusion due to inadequate access control, allowing attackers to exploit gateway weaknesses and gain system control.</li>
+                    <li><b>Denial of Service:</b> IoT systems with limited computational power are vulnerable to DoS attacks. Sicari et al. (2015) emphasize that IoT devices with limited resources are particularly vulnerable to DoS attacks, potentially disrupting the entire system's functionality. A DoS attack on IoT devices can significantly reduce their storage and network capabilities, leading to performance degradation and potential operational harm (Bhardwaj et al., 2024).</li>
+                    <li><b>Physical Tampering:</b> IoT devices in public areas are vulnerable to physical attacks. Roman et al. (2011) emphasize the risk of tampering, as attackers can access and inject malicious code.</li>
+                    <li><b>XSS Attacks:</b> Potential XSS vulnerabilities could enable malicious software to enter the website portal, potentially affecting IoT devices. The use of scripts can compromise the privacy and integrity of device owners, allowing unauthorized access to data and modifying its functionality (Bhardwaj et al., 2024; Chui, 2023).</li>
+                    <li><b>Weak passwords:</b> IoT device security is compromised by weak or hard-coded passwords, often reused, increasing attack likelihood (Fortinet, 2023).</li>
+                </ul>
+
+                <p><b>3. Attack-Defense Tree Structure:</b></p>
+                <p>Root Node: Compromise Smart Home Security System (Main Attack Goal)</p>
+                <p><b>Sub-goals:</b></p>
+                <ol>
+                    <li><b>Compromise Hub/Controller</b> (OR): Weak authentication, insecure protocols, physical tampering.</li>
+                    <li><b>Compromise IoT Devices</b> (OR): Exploit vulnerabilities, data traffic capture, device spoofing.</li>
+                    <li><b>Network-Level Attacks</b> (OR): DoS attacks, MitM, weak router configurations.</li>
+                    <li><b>Client-Side Injection:</b> XSS via the website portal.</li>
+                </ol>
+                <img src="../../images/articles_imgs/secure-system-architecture-group-assignment/Smart_home_Security_System.png" width="100%" height="auto" alt="">
+                <p><b>Figure 1:</b> AD Tree from an IoT and the various methods it can be compromised with possible mitigation, created using ADTool 1.4 (2015). </p>
+
+                <p><b>4. Quantitative Evaluation of Security Vulnerabilities:</b></p>
+                <p>Quantitative evaluation involves assigning probabilities or weights to each attack vector, calculating the overall risk exposure based on the Likelihood of Attack Success. Rios et al (2020) utilized attack trees using probability of success to examine risk management in smart grids.</p>
+                <img src="../../images/articles_imgs/secure-system-architecture-group-assignment/Smart_home_Security_System_Probability.png" width="100%" height="auto" alt="">
+                <p><b>Figure 2:</b> AD Tree showing probabilities of attacks and mitigation, using ADTool 1.4 (2015).</p>
+
+                <p><b>5. Defense Countermeasures (Defense Nodes):</b></p>
+                <ul>
+                    <li><b>Hub Compromise:</b> Use strong authentication and encrypted protocols Use strong authentication and encrypted protocols (e.g., WPA3, TLS), and update the firmware regularly.</li>
+                    <li><b>Device-Level Attacks:</b> Implement end-to-end encryption, device anomaly detection, and firmware updates.</li>
+                    <li><b>Network-Level Attacks:</b> Apply firewalls, network segmentation, NIDS, and limit remote access. </li>
+                    <li><b>Client-Side Code Injection:</b> Validate input and whitelist to block HTML/JavaScript. WAF filters requests and encodes output before rendering (PortSwigger, 2023; Yakdan, n.d.).</li>
+                </ul>
+
+                <p><b>6. Conclusion</b></p>
+                <p>The vulnerabilities in IoT networks and Systems of Systems (SoS) are complex, requiring robust security protocols across devices and networks. Addressing these requires improved authentication practices, firmware updates, encryption standards, and effective access control mechanisms. This approach reduces vulnerability and enhances security in an increasingly connected world.</p>
+
+                <p><b>Authors:</b></p>
+                <ul>
+                    <li>Anja Kosar: <a class="list-links"href="https://anja-kosar.github.io/" target="_blank">anja-kosar.github.io</a></li>
+                    <li>Amrol Miah</li>
+                    <li>Syed Imran: <a class="list-links" href="https://syed-ali-2014.github.io/e_portfolio/" target="_blank">https://syed-ali-2014.github.io/e_portfolio/</a></li>
+                    <li>Mohammed Younes: <a class="list-links"href="https://my23007.github.io/" target="_blank">my23007.github.io</a></li>
+                </ul>
+
+
+            </article>
+<!--            References Accordio-->
+            <div id="accordio">
+                <ul>
+                    <li>
+                        <input type="checkbox" checked>
+                        <i></i>
+                        <h2>References:</h2>
+                        <!-- Reference content -->
+                        <p>
+                            <br><br>
+                            <cite>ADTool 1.4 (2015). <em>Attack Defense Tree Tool Software.</em> Fond National de la Recherche Luxembourg</cite>
+                            <br><br>
+                            <cite>Alrawais, A., Alhothaily, A., Hu, C. and Cheng, X., (2017). Fog computing for the Internet of Things: Security and privacy issues. <em>IEEE Internet Computing,</em> 21(2), pp.34-42. <a href="DOI: 10.1109/MIC.2017.37" target="_blank">DOI: 10.1109/MIC.2017.37</a></cite>
+                            <br><br>
+                            <cite>Bhardwaj, A., Bharany, S., Abulfaraj, A.W., Osman Ibrahim, A. and Nagmeldin, W. (2024). Fortifying home IoT security: A framework for comprehensive examination of vulnerabilities and intrusion detection strategies for smart cities. <em>Egyptian Informatics Journal,</em> [online] 25, p.100443. doi:<a href="https://doi.org/10.1016/j.eij.2024.100443" target="_blank">https://doi.org/10.1016/j.eij.2024.100443</a> [Accessed 28 October 2024].</cite>
+                            <br><br>
+                            <cite>Chui, K.T. (2023). <em>IoT Security Breaches: Lessons Learned from XSS Incidents.</em> [online] Insights2Techinfo. Available at: <a href="https://insights2techinfo.com/iot-security-breaches-lessons-learned-from-xss-incidents" target="_blank">https://insights2techinfo.com/iot-security-breaches-lessons-learned-from-xss-incidents</a> [Accessed 28 October 2024].</cite>
+                            <br><br>
+                            <cite>Kodali, R.K., Jain, V., Bose, S. and Boppana, L. (2016). IoT based smart security and home automation system - IEEE Conference Publication. <em>Ieee.org.</em> [online] doi:<a href="https://doi.org/10.1109/CCAA.2016.7813916" target="_blank">https://doi.org/10.1109/CCAA.2016.7813916</a>  [Accessed 28 October 2024].</cite>
+                            <br><br>
+                            <cite>Kolias, C., Kambourakis, G., Stavrou, A. and Voas, J., (2017). DDoS in the IoT: Mirai and other botnets. <em>Computer,</em> 50(7), pp.80-84. <a href="DOI:10.1109/MC.2017.201" target="_blank">DOI: 10.1109/MC.2017.201</a> </cite>
+                            <br><br>
+                            <cite>PortSwigger (2023). <em>What is cross-site scripting (XSS) and how to prevent it?</em> [online] Portswigger.net. Available at: <a href="https://portswigger.net/web-security/cross-site-scripting" target="_blank">https://portswigger.net/web-security/cross-site-scripting</a> [Accessed 1 November 2024].</cite>
+                            <br><br>
+                            <cite>Rios, E., Rego, A., Iturbe, E., Higuero, M. and Larrucea, X., (2020). Continuous quantitative risk management in smart grids using attack defense trees. <em>Sensors,</em> 20(16), p.4404.</cite>
+                            <br><br>
+                            <cite>Roman, R., Najera, P. and Lopez, J., (2011). Securing the Internet of Things. <em>Computer,</em> 44(9), pp.51-58. <a href="DOI:10.1109/MC.2011.291" target="_blank">DOI: 10.1109/MC.2011.291</a></cite>
+                            <br><br>
+                            <cite>Sicari, S., Rizzardi, A., Grieco, L.A. and Coen-Porisini, A., (2015). Security, privacy and trust in IoT: The road ahead. <em>Computer Networks,</em> 76, pp.146-164. <a href="DOI:10.1016/j.comnet.2014.11.008" target="_blank">DOI: 10.1016/j.comnet.2014.11.008</a></cite>
+                            <br><br>
+                            <cite>Yakdan, K. (n.d.). <em>What Is Cross Site Scripting and How to Avoid XSS Attacks?</em> [online] www.code-intelligence.com. Available at: <a href="https://www.code-intelligence.com/blog/what-is-cross-site-scripting" target="_blank">https://www.code-intelligence.com/blog/what-is-cross-site-scripting</a> [Accessed 1 November 2024]. </cite>
+                            <br><br>
+                            <cite>Zarpelão, B.B., Miani, R.S., Kawakani, C.T. and de Alvarenga, S.C., (2017). A survey of intrusion detection in Internet of Things. <em>Journal of Network and Computer Applications,</em> 84, pp.25-37. <a href="DOI:10.1016/j.jnca.2017.02.009" target="_blank">DOI: 10.1016/j.jnca.2017.02.009</a> </cite>
+                            <br><br>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Button to nagigate to the the next page -->
+            <ul class="actions">
+                <li><a href="../../posts/07-secure-systems-architecture/secure-systems-architecture.html" class="button">Back</a></li>
+                <li><a href="../../posts/07-secure-systems-architecture/#" class="button">Read the coding output</a></li>
+            </ul>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://uk.linkedin.com/in/amrol-b-miah-390b3b35?trk=org-employees" target="_blank" class="icon brands fa-brands fa-linkedin-in"><span class="label">linkedin</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="https://www.instagram.com/amrolbm/?hl=en" target="_blank" class="icon brands fa-brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon solid fa-solid fa-user-secret"><span class="label">Securit Agent</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Amrol B. Miah 2023</li>
+                <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
