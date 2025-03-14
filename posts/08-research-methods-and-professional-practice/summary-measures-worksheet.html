@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!-- initial-post1-summary-module2.html -->
+<html>
+
+<head>
+    <title>Strata by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a href="../../index.html" class="image avatar"><img src="../../images/adnan-khan-VS2C5_GI_MM-unsplash_600x600.jpg" alt="" /></a>
+            <h1>Hi there, I'm <strong>Amrol B. Miah</strong> <br /> A MSc Cyber Security student<br /> based in London.</h1>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../content.html">MSc Cybersecurity</a></li>
+                    <li><a href="../../about.html">About</a></li>
+                    <li><a href="../../contact.html">Get in Touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main -->
+    <div id="main">
+        <!-- Body Content -->
+        <section id="one">
+            <!-- Main Title-->
+            <header class="major">
+                <h2>Summary Measures Worksheet</h2>
+                <!-- Sub Heading-->
+                <p class="subheading">Activity - Unit 7</p>
+                <!-- Post Date-->
+                <p><em>Friday, 14 March 2025, 12:03 PM</em></p>
+            </header>
+            <!-- Main Body Content-->
+            <article>
+
+                <p><b>Exercise 6.1:</b></p>
+                <p>In this example, the instructions ask to open the files titled Exa8.1B.xlsx, which contain the data needed to run the test example.</p>
+                <p>The instruction document states that one should work out the <b>count</b>, <b>average</b>, and standard deviation <b>(STDEV)</b> using the following formula in Excel.</p>
+                <ul>
+                    <li><b>=COUNT(B2:B51)</b></li>
+                    <li><b>=AVERAGE(B2:B51)</b></li>
+                    <li><b>=STDEV(B2:B51)</b></li>
+                </ul>
+                <img src="../../images/articles_imgs/summary-measures-worksheet/smw-img-01.png" width="100%"  alt="">
+                <p>The results from both sets of data, <b>Diet A</b> and <b>Diet B</b>, have a sample size of 50 (<b>n = 50</b>), which makes it an equal test; this employs the <b>=COUNT(data)</b> function. The mean weight loss is 5.341 kg for group A and 3.710 kg for group B, using the <b>=AVERAGE(data)</b> function. Lastly, the standard deviation for group A is 2.536 kg and for group B, it is 2.769 kg, calculated using <b>=STDEV(data)</b>. It noted that the data from group B does have some negative values, which may suggest individuals may have increased their weight.</p>
+                <p>The mean (<b>=AVERAGE</b>) weight loss is higher in the <b>Diet A</b> group at 5.341 kg, compared to 3.710 kg in the <b>Diet B</b> group, suggesting that Diet A may be more effective.</p>
+                <p>Examining the standard deviation (<b>SD</b>), Diet A indicates that the <b>SD</b> is closer to the mean (<b>=AVERAGE</b>), while <b>Diet B</b> shows slightly more variation, suggesting a higher <b>SD</b>. This higher <b>SD</b> implies that the data is more spread out, which supports instances of several negative values of <b>-4.148kg</b> and some participants losing over <b>10.539kg</b>. Based on these figures, it would suggest that <b>Diet A</b> is more effective.</p>
+
+                <p><b>Exercise 6.2:</b></p>
+                <p>In this example, the test looked at <b><b>=MEDIAN</b>(data)</b> and <b><b>=QUARTILE</b>(data; options)</b>.</p>
+                <p>The <b>=MEDIAN</b> function will return the middle value of the dataset. However, if the dataset consists of an odd set of numbers, the function will select the middle value and then calculate the average of the two middle numbers.</p>
+                <p>The <b><b>=QUARTILE</b></b> function will return the specific quartile based on the percentile.</p>
+                <img src="../../images/articles_imgs/summary-measures-worksheet/smw-img-02.png" width="50%"  alt="">
+                <img src="../../images/articles_imgs/summary-measures-worksheet/smw-img-03.png" width="50%"  alt="">
+                <p>Finally, the interquartile <b>(IQR)</b> range for <b>Diet A</b> will be calculated by subtracting <b>Q3</b> from <b>Q1</b>.</p>
+                <img src="../../images/articles_imgs/summary-measures-worksheet/smw-img-04.png" width="50%"  alt="">
+                <p>From the result, it shows the following</p>
+                <p><b>Diet A</b>:</p>
+                <ul>
+                    <li><b>Median</b> (<b>=MEDIAN</b>) the middle value: 5.642</li>
+                    <li>Q1 (<b>=QUARTILE(data; First Quartile, 25th Percentile)</b>): 3.748</li>
+                    <li>Q3 (<b>=QUARTILE(data; Third Quartile, 75th Percentile)</b>): 7.033</li>
+                    <li>Interquartile Range <b>(IQR = Q3 - Q1)</b>: 3.285</li>
+                </ul>
+                <p><b>Diet B</b>:</p>
+                <ul>
+                    <li>Median (<b>=MEDIAN</b>) the middle value: 3.745</li>
+                    <li>Q1 (<b>=QUARTILE(data; First Quartile, 25th Percentile)</b>): -4.148</li>
+                    <li>Q3 (<b>=QUARTILE(data; Third Quartile, 75th Percentile)</b>): 5.485</li>
+                    <li>Interquartile Range <b>(IQR = Q3 - Q1)</b>: 9.633</li>
+                </ul>
+                <p><b>Diet A</b> has a higher median (<b>=MEDIAN</b>) weight loss <b>(5.642)</b> compared to <b>Diet B (3.745)</b>, which suggests that <b>Diet A</b> yields better results for weight loss on average compared to <b>Diet B</b>. The first part of the <b>=QUARTILE, Q1 (25th percentile)</b> for <b>Diet A</b> shows that 25% have experienced weight loss <b>(3.748)</b>, whereas 25% from <b>Diet B</b> exhibit a negative value <b>(-4.148)</b>, indicating that 25% of participants may have either gained weight or lost very little. For the <b>=QUARTILE</b>, the <b>Q3 (75th percentile)</b> section indicates that <b>Diet A (7.033)</b> is higher than <b>Diet B</b> (5.485), suggesting that more participants in <b>Diet A</b> lost weight compared to those in <b>Diet B</b>. The interquartile range <b>(IQR)</b> for <b>Diet A (3.285)</b> is smaller than that of <b>Diet B (9.633)</b>. This may suggest that <b>Diet A</b> produces more consistent results for weight loss, as the values are closer together, while <b>Diet B</b> displays more variable results, indicating that weight loss may be inconsistent.</p>
+                <p>From these findings, it suggests that <b>Diet A</b> is more effective at achieving weight loss, as the results are more consistent. In contrast, <b>Diet B</b> shows variable results, indicating that some individuals lose weight while others do not and may even gain weight. This suggests that <b>Diet B</b> is not as effective compared to <b>Diet A</b>.</p>
+                <img src="../../images/articles_imgs/summary-measures-worksheet/smw-img-05.png" width="100%"  alt="">
+                <p><b>Exercise 6.3:</b></p>
+                <p>For this exercise, we will examine the <b>=COUNTIF(range; criteria)</b> function, which counts the number of cells within a given range that meets a specific condition, and the <b>=SUM(range)</b> function, regarded as one of the most popular functions, which adds together all the numbers from a specified range.</p>
+                <p>This exercise will evaluate whether preference trends for various breakfast cereal brands differ between the two demographic areas. Due to its individual-level context, Analysing the raw data alone will not yield substantial insights.</p>
+                <img src="../../images/articles_imgs/summary-measures-worksheet/smw-img-06.png" width="100%"  alt="">
+                <br><br>
+                <img src="../../images/articles_imgs/summary-measures-worksheet/smw-img-07.png" width="100%"  alt="">
+                <p>The data presented suggests that the dominant brand in <b>Area 1</b> is <b>“Other”</b>, which has a score of <b>42</b> out of <b>70</b>, accounting for <b>60%</b> of the total. <b>Brand A</b> is the least favoured, with a score of only <b>11</b> out of <b>70</b>, representing <b>15.7%</b>. <b>Brand B</b> ranks second, scoring <b>17</b> out of <b>70</b>, corresponding to <b>24.3%</b>. The data indicates that in <b>Area 1</b>, people prefer <b>“Other”</b> brands over <b>A</b> and <b>B</b>.</p>
+                <p>In <b>Area 2</b>, <b>Brand B</b> scores higher than in <b>Area 1</b>, achieving a score of <b>31</b> , which represents <b>34.1%</b> of the <b>91</b> choices. However, the category labelled <b>“Other”</b> still has a higher score of <b>41</b> out of <b>91</b>, representing <b>45.05%</b>. Once again, <b>Brand A</b> is the least favoured, scoring <b>19</b> out of <b>91</b>, representing <b>20.9%</b>.</p>
+                <p><b>Area 2 (91 total)</b> has <b>21</b> more participants than <b>Area 1 (70 total)</b> , which suggests that the data needs to be more evenly distributed. However, the data does indicate that <b>Brand B</b> is more favoured in <b>Area 2</b> compared to <b>Area 1</b>. Both areas show that <b>Brand A</b> is the least favoured, while the <b>“Other”</b> category remains popular in both areas.</p>
+                <img src="../../images/articles_imgs/summary-measures-worksheet/smw-img-08.png" width="100%"  alt="">
+                <br><br>
+
+            </article>
+<!--            References Accordio-->
+<!--            <div id="accordio">-->
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <input type="checkbox" checked>-->
+<!--                        <i></i>-->
+<!--                        <h2>References:</h2>-->
+<!--                        &lt;!&ndash; Reference content &ndash;&gt;-->
+<!--                        <p>-->
+<!--                            <br><br>-->
+<!--                            -->
+<!--                            <br><br>-->
+
+<!--                        </p>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+            <!-- Button to nagigate to the the next page -->
+            <ul class="actions">
+                <li><a href="../../posts/08-research-methods-and-professional-practice/research-methods-and-professional-practice.html" class="button">Back</a></li>
+<!--                <li><a href="../../posts/07-secure-systems-architecture/#" class="button">Read the coding output</a></li>-->
+            </ul>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://uk.linkedin.com/in/amrol-b-miah-390b3b35?trk=org-employees" target="_blank" class="icon brands fa-brands fa-linkedin-in"><span class="label">linkedin</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="https://www.instagram.com/amrolbm/?hl=en" target="_blank" class="icon brands fa-brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/abmiah" target="_blank" class="icon solid fa-solid fa-user-secret"><span class="label">Securit Agent</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Amrol B. Miah 2025</li>
+                <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.poptrox.min.js"></script> -->
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
