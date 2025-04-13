@@ -2385,11 +2385,17 @@ input, select, textarea {
 
 		table td {
 			padding: 0.75em 0.75em;
+			font-size: 12px;
+			line-height: 14px;
+			vertical-align: middle;
+
 		}
 
 		table th {
 			color: #787878;
-			font-size: 0.9em;
+			font-size: 14px;
+			line-height: 14px;
+			/* font-size: 0.9em;*/
 			font-weight: 400;
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
